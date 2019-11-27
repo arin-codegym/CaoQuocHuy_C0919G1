@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="number" placeholder="Enter a num ber a" id="heSoA">
+    <input type="number" placeholder="Enter a num ber b" id="heSoB">
+    <input type="number" placeholder="Enter a num ber c" id="heSoC">
+
+    <button type="button" onclick="TinhToan()">Result</button>
+    <p id="Result"></p>
+
+</form>
+<script>
+    let a = document.getElementById("heSoA");
+    // console.log(typeof (a.value));
+    let b = document.getElementById("heSoB");
+    let c = document.getElementById("heSoC");
+    let result;
+
+    function TinhToan() {
+
+        if (a.value * 1 === 0) {
+            if (b.value * 1 === 0)
+                if (c.value * 1 === 0) {
+                    document.getElementById("Result").innerText = "PT co vo so nghiem";
+                } else {
+                    document.getElementById("Result").innerText = "PT  vo  nghiem";
+                } else {
+                result = -b.value / c.value;
+                document.getElementById("Result").innerText = "PT co  nghiem" + result;
+            }
+        } else {
+            let delta = Math.pow(b.value, 2) - 4 * a.value * c.value;
+            if (delta > 0) {
+                console.log(delta);
+                let candelta = Math.sqrt(delta);
+                console.log(candelta);
+                result = "nghiem 1 la:" + (-b.value + candelta) / (2 * a.value) + "va nghiem 2 la:" + (-b.value - candelta) / (2 * a.value);
+
+
+                document.getElementById("Result").innerText = result;
+            } else if (delta === 0) {
+                result = "co nghiem kep la:" - b.value / 2 / a.value;
+                document.getElementById("Result").innerText = result;
+            } else {
+                result = "pt vo nghiem";
+                document.getElementById("Result").innerText = result;
+            }
+
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

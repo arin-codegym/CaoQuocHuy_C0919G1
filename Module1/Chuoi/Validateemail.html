@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="mail">Validate Email</label>
+<input id="mail" type="text" >
+<button id="checkEmail" type="button" onclick="ValidateEmail(email.value)" >Enter</button>
+<script>
+    let email=document.getElementById("mail");
+    email.focus();
+    let validateEmail=/^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+
+    function ValidateEmail(email) {
+
+      alert(validateEmail.test(email));
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="temp"></label>
+<input id="temp" placeholder="Input C" type="text">
+<input  type="button" value="click" onclick="Click()">
+<p id="result"></p>
+<script>
+    let Temperature = function () {
+        this.setDoC =function (doC) {
+            this.doC=doC;
+        };
+        this.getDoC = function () {
+            return this.doC;
+        };
+        this.getdoF = function () {
+            return 33.8 * this.doC;
+
+        };
+        this.getdoK = function () {
+
+            return 274.15 * this.doC;
+        };
+    };
+   function Click() {
+       var kq = "";
+       let c = document.getElementById("temp");
+       let temperature = new Temperature();
+       temperature.setDoC(c.value*1);
+       kq = "do F la:" + temperature.getdoF() + "\n" + "do K la :" + temperature.getdoK();
+       document.getElementById("result").innerText = kq;
+   }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

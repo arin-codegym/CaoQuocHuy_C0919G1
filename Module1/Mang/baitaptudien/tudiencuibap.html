@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="nhap" placeholder="nhap tu">
+    <button type="button" onclick="tudien()">Dịch</button>
+    <p id="dich"></p>
+
+
+
+<!--    <h1>Dictionary English - Vietnamese</h1>-->
+
+<!--    <label>-->
+<!--        Type your word:-->
+<!--        <input id="txtWord" type="text">-->
+<!--    </label>-->
+<!--    <input type="button" value="Search" onclick="searchWord()">-->
+<!--    <p id="result"></p>-->
+<!--</form>-->
+<script>
+    let arrEng = ['cat', 'dog', 'lion', 'tiger',];
+    cat = "meo";
+    let arrVie = [
+        'mèo',
+        'chó',
+        'sư tử',
+        'cọp',
+    ];
+
+
+    function tudien() {
+        let txt = document.getElementById("nhap");
+        let check = false;
+        for (let i = 0; i < arrVie.length; i++) {
+            if (txt.value === arrEng[i]) {
+                document.getElementById("dich").innerHTML = arrVie[i];
+                check = true;
+            }
+        }
+
+        if (!check){
+            alert("chưa cập nhập");
+        }
+    //
+    //
+    // }    let arrEng = ['cat', 'dog', 'lion', 'tiger',];
+    // let english = ["Apple", "Orange", "Banana", "Lemon", "Watermelon", "Pineapple", "Peaches"];
+    // let vietnamese = ["Táo", "Cam", "Chuối", "Chanh", "Dưa Hấu", "Dứa", "Đào"];
+    // let result = [];
+    // function searchWord() {
+    //     let word = document.getElementById("txtWord").value;
+    //     let i = 0;
+    //     while (i < english.length) {
+    //         if (word === english[i]) {
+    //             result.push(vietnamese[i]);
+    //             break;
+    //         } else if (i === english.length - 1) {
+    //             result.push("not found");
+    //             break;
+    //         } else {
+    //             i++;
+    //         }
+    //     }
+    //     document.getElementById("result").innerHTML = result;
+    // }
+</script>
+
+</body>
+</html>

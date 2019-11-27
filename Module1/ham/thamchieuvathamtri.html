@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function increment(n) {
+    //     n++;
+    //     console.log("n	inside	the	method	is	" + n);
+    //
+    // }
+    //
+    // function main() {
+    //     let x;
+    //     x = 1;
+    //     console.log("Before	the	call,	x	is	" + x);
+    //     increment(x);
+    //     console.log("After	the	call,	x	is	" + x);
+    // }
+    //
+    // main();
+
+    // function swap(n1, n2) {
+    //     console.log("\tInsidethe	swap	method");
+    //     console.log("\t\tBeforeswapping,	n1	is	" + n1 + "	and	n2	is	" + n2);
+    //     var temp = n1;
+    //     console.log(temp);
+    //     n1 = n2;
+    //     console.log(temp);
+    //     console.log(n1);
+    //     console.log(n2);
+    //     n2 = temp;
+    //     console.log(n2);
+    //     console.log(temp);
+    //     console.log("\t\tAfterswapping,	n1	is	" + n1 + "	and	n2	is	" + n2);
+    // }
+    //
+    // function main() {
+    //     var num1 = 1;
+    //     var num2 = 2;
+    //     console.log("Before	invoking	the	swap	method,	num1	is	" + num1 + "	and	num2	is	" + num2);
+    //     swap(num1, num2);
+    //     console.log("After	invoking	the	swap	method,	num1	is	" + num1 + "	and	num2	is	" + num2);
+    // }
+    // main();
+    function callByValue(varOne, varTwo) {
+        console.log("Inside Call by Value Method");
+        varOne = 100;
+        varTwo = 200;
+        console.log("varOne =" + varOne +"varTwo =" +varTwo);
+        let result;
+        result = varOne+varTwo;
+        console.log(result);
+        return result;
+
+    }
+    let varOne = 10;
+    let varTwo = 20;
+    console.log("Before Call by Value Method");
+    console.log("varOne =" + varOne +"varTwo =" +varTwo);
+
+    console.log("After Call by Value Method");
+    console.log("varOne =" + varOne +"varTwo =" +varTwo);
+    console.log(callByValue(varOne, varTwo));
+    function turnOn(machine) {
+        machine.isOn = true;
+    }
+    let computer = {
+        isOn: false
+    };
+    turnOn(computer);
+    console.log(computer.isOn); // true;
+    // function turnOn(machine) {
+    //     machine = {
+    //         isOn: true
+    //     };
+    // }
+    // let computer = {
+    //     isOn: false
+    // };
+    // console.log(computer.isOn); // false;
+    function square(x) {
+        x = x * x;
+         return x;
+    }
+    let y = 10;
+    //square(y);
+
+    console.log(y);
+
+</script>
+
+</body>
+</html>

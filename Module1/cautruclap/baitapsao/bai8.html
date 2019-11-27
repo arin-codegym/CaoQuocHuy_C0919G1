@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>Game Đoán Số<h1/>
+        <h4>
+            <p>Đoán 1 số từ 1 đến 10? Bấm nút "Play" bên dưới để chơi</p>
+        </h4>
+        </head>
+
+
+<body>
+<form>
+    <input type="button" value="Play" onclick="game()">
+</form>
+<script>
+    function game() {
+        let dem = 1;
+        let choose = parseInt(prompt("Đoán 1 số từ 0 đến 10"));
+        while (choose < 0 || choose > 10) {
+            alert("chi chon tu 0 den 10");
+            choose = parseInt(prompt("chọn 1 số từ 0 đến 10"));}
+            let x = Math.floor(Math.random() * 10);
+            if (choose !== x) {
+                do {
+                    if (choose < x) {
+                        alert("Sai rồi kết quả nhỏ hơn" );
+                        choose = parseInt(prompt("chọn lại nào"));
+                        dem++;
+                    }else
+                    if (choose > x) {
+                        alert("Sai rồi kết quả lớn hơn");
+                        choose = parseInt(prompt("chọn lại nào"));
+                        dem++;
+                    }else {
+                        alert("Chúc mùng bạn đã đoán đúng.");
+                        break;
+                    }
+
+                } while ( dem<=2);
+                alert("bạn thua rồi quá 3 lần.")
+
+
+            }else{
+                alert("Chúc mùng bạn đã đoán đúng.")
+            }
+    }
+
+
+</script>
+</body>
+</html>

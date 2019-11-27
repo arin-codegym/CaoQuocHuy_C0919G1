@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="textInput" type="text" onkeydown="runProgram(event)"/>
+<script>
+    let textinput = document.getElementById("textInput");
+    let index = -1;
+    let str = "Nguyen Thanh Kien";
+    let result = "";
+    function runProgram(event) {
+        if (event.keyCode === 8) {
+            result = result.substring(0, result.length -1);
+            if (index < -1) {
+                index = -1;
+            }
+            index--;
+        } else {
+            event.preventDefault();
+            if (index < str.length - 1) {
+                index++;
+                result += str.charAt(index);
+                textinput.value = result;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

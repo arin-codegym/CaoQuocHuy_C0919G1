@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = parseInt(prompt("nhap tham so a:"));
+    var b = parseInt(prompt("nhap tham so b :"));
+
+    function check(a, b) {
+        if (a > b) {
+            alert("a lon hon b");
+        } else if (a < b) {
+            return a + b;
+        }
+        return "vui long nhap lai";
+
+
+    }
+
+    var result = check(a, b);
+
+    alert(result);
+
+
+</script>
+
+</body>
+</html>

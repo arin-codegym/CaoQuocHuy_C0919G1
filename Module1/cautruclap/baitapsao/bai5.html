@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var i;
+    var fib = [];
+    let resutl = 0;// Initialize array!
+
+    fib[0] = 0;
+    fib[1] = 1;
+    for (i = 2; i <= 21; i++) {
+        // Next fibonacci number = previous + one before previous
+        // Translated to JavaScript:
+        fib[i] = fib[i - 2] + fib[i - 1];
+
+
+        document.write(fib[i] + "<br/>");
+        resutl += fib[i];
+
+    }document.write("tong =" + resutl);
+
+</script>
+</body>
+</html>

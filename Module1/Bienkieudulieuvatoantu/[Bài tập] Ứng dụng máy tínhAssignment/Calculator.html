@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Caculator<br>
+<form>
+    <input id="cot1" type="number">
+    <input id="cot2" type="number"><br>
+    <button type="button" onclick="Addition()" value="Addition">Addition</button>
+    <button type="button" onclick="Subtraction ()" value="Subtraction">Subtraction</button>
+    <button type="button" onclick="Multiplication () " value="Multiplication">Multiplication</button>
+    <button type="button" onclick="Division()" value="Division">Division</button>
+    <p id="cong"></p>
+    <p id="tru"></p>
+    <p id="nHan"></p>
+    <p id="cHia"></p>
+    <script>
+        let a = document.getElementById("cot1");
+        let b = document.getElementById("cot2");
+        let c = 0 ;
+        function Addition() {
+            c = (parseInt(a.value) + parseInt(b.value));
+            document.getElementById("cong").innerText = c ;
+        }
+        function Subtraction() {
+            c = parseInt(a.value) - parseInt(b.value);
+            document.getElementById("tru").innerText = c ;
+        }
+        function Multiplication() {
+            c = parseInt(a.value) * parseInt(b.value);
+            document.getElementById("nHan").innerText = c;
+        }
+        function Division() {
+            c = parseInt(a.value)/parseInt(b.value);
+            document.getElementById("cHia").innerText = c;
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+
+</form>
+</body>
+</html>

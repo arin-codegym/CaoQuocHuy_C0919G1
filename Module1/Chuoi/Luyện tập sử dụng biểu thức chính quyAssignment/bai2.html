@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/* reg cui bap lam dai bo me ra nhung phai lam */
+    let str = prompt("nhap chuoi");
+    let reg = /\s/gi;
+    str = str.trim();
+    let res = str.match(reg);
+    let soTu = res.length + 1;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i + 1] && str[i] === " ") {
+            soTu--;
+        }
+    }
+    alert("so tu" + soTu);
+/* Nhanh gon le
+ let str = prompt("int string:");
+    str= str.split(" ").filter(x => x !== "");
+    console.log(str.length)
+ */
+/*  syntax tim gia tri chu trong chuoi:
+let find = new Reg(pattern,attribution)// let find= /pattern/attribution
+
+* */
+
+</script>
+
+</body>
+</html>

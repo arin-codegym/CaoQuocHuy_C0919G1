@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong
+        mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </title>
+</head>
+<body>
+<script>
+    let arrKyTu = [];
+    let exit;
+    let nhap;
+    let dem = 0;
+
+    function find() {
+        while (exit !== null) {
+            exit = prompt("nhap kys tu");
+            arrKyTu.push(exit);
+        }
+        arrKyTu.pop();
+        console.log(arrKyTu);
+        for (let i = 0; i < arrKyTu.length; i++) {
+            if (arrKyTu[i] === "") {
+                arrKyTu.splice(i, 1);
+                i--;
+            }
+        }
+        nhap = prompt("ky tu can kiem tra:");
+        for (let i = 0; i < arrKyTu.length; i++) {
+            if (arrKyTu[i] === nhap) {
+                dem++;
+            } else {
+                return -1;
+            }
+        }
+        console.log("xuat hien" + dem)
+    }
+    console.log(find())
+</script>
+
+</body>
+</html>

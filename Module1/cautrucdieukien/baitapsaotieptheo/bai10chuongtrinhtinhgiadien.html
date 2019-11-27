@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function menu() {
+        let choose = parseInt(prompt("Biểu giá bán lẻ điện.\n" +
+            "\n1.Khối hành chính, sự nghiệp " +
+            "\n2.Kinh doanh" +
+            "\n3.Sinh hoạt"
+        ))
+        switch (choose) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                menu()
+        }
+    }
+
+    menu();
+    let raTien;
+    let suDung;
+    function menuHanhChinh() {
+
+        let choose = parseInt(prompt("\n1.Bệnh viện, nhà trẻ, mẫu giáo, trường phổ thông" +
+            "\n2.Chiếu sáng công cộng; đơn vị hành chính sự nghiệp"));
+        switch (choose) {
+            case 1:
+                suDung=parseFloat(prompt("Số kv sử dụng: "));
+                if (suDung<6){
+                    raTien= 1.771 * suDung;
+                }else if (suDung>6){
+                    raTien=1.659 * suDung;
+                }
+                alert("Tiền điện là:"+raTien);
+
+
+                break;
+            case 2:
+                break;
+
+
+        }
+
+    }
+
+    menuHanhChinh()
+</script>
+
+</body>
+</html>

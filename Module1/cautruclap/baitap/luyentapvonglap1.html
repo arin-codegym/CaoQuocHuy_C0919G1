@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = 1;
+    var b = 0;
+    var temp = 1;
+    var dem = 0;
+    for (var i = 1; i < 20; i++){
+        temp = a + b;
+        b = a;
+        a = temp;
+        document.write(temp + ", ");
+        // if(temp % 5 ==0 && dem == 0 ) { dem ++;
+        //     document.write("so dau tien trong day chia het cho 5 la:" + temp + ", ");
+        // }
+        dem = dem + temp;
+    }
+    document.write("<br>" + "Tong 20 so dau tien là:" + dem);
+</script>
+
+</body>
+</html>>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <p>Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. Ví dụ, nếu một mảng chứa các ký tự
+        {'c', 's', 'c', '2', '6', '1'} sau khi thực hiện đảo ngược sẽ là "162csc"</p>
+</head>
+<body>
+<script>
+    /* cach lam ngan gon cui bap
+    let arr = [];
+    let txt;
+    do{
+        txt = prompt("nhap dong chu");
+        arr.push(txt);
+    }while (txt !== null);
+    arr.pop();
+    arr.reverse();
+    alert("xong bam F12 xem console de xem kq");
+
+    console.log(arr);*/
+    /* cach lam thu 2 chi tiet hon*/
+    let arr = [];
+    let txt;
+    do {
+        txt = prompt("nhap dong chu");
+        arr.push(txt);
+    } while (txt !== null);
+    arr.pop();
+    let first = 0;
+    let last = arr.length - 1;
+    while (first < last) {
+        let x = arr[first];
+        arr[first] = arr[last];
+        arr[last] = x;
+        first++;
+        last--;
+    }
+
+    // let result="";
+    // for (let i in arr){
+    //     result+=arr[i];
+    // }
+
+
+    document.write(arr.toString());
+
+</script>
+</body>
+</html>

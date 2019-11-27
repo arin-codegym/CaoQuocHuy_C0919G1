@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Copy đoạn test sau:"+"Tôi yêu ngôn ngữ lập trình Javascript");
+    let str1=str;
+    let find = prompt("Nhập từ cần tìm trong chuỗi trên:");
+    let pat = new RegExp(find,'gi');
+    let res=str.match(pat);
+    console.log("sô lần xuất hiện của"+"'"+find+"'"+"là:"+res.length);
+    str=str.split("");
+    console.log("Tách chuỗi vào mảng:"+str);
+    str=str.filter(x =>x!==" ");
+    console.log(str);
+    console.log("số từ trong chuỗi là:"+str.length);
+    str1=str1.replace('Javascript','Typescript');
+    console.log(str1);
+
+</script>
+</body>
+</html>

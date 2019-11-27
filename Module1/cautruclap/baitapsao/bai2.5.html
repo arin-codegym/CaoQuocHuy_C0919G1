@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tienVay=parseFloat(prompt("Nhập số tiền muốn vay:"));
+    let laiSuat=parseFloat(prompt("Lãi  suất theo thời điểm hiện tại và tính theo tháng:"));
+    let soThang=parseFloat(prompt("Số tháng muốn vay:"));
+    let laiTungThang ;
+
+    let tongLai=0;
+    for (let i=1;i<=soThang;i++,tienVay+=laiTungThang){
+        laiTungThang=tienVay/100*laiSuat;
+        alert("Lãi tháng"+i+"là"+laiTungThang);
+        tongLai += laiTungThang;
+    }alert("Tổng lãi phải trả sau"+soThang+"muốn vay là :"+tongLai);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let elementa = parseInt(prompt("element in arrayIntA"));
+    let arrIntA = new Array();
+
+
+
+    for (let i = 0; i < elementa; i++) {
+        let inta = parseInt(prompt(" a number of arrayA"));
+        arrIntA[i] = inta;
+    }
+
+    let elementb = parseInt(prompt("element in arrayIntB"));
+    let arrIntB = new Array();
+
+
+    for (let i = 0; i < elementb; i++) {
+        let intb = parseInt(prompt(" a number of Array B"));
+        arrIntB[i] = intb;
+    }
+    let arrIntC = arrIntA.concat(arrIntB) ;
+    // for (let x in arrIntA){
+    //     arrIntC.push(arrIntA[x]);
+    // }
+    // for (let x in arrIntB){
+    //     arrIntC.push(arrIntB[x]);
+    // }
+
+    console.log(arrIntC);
+
+</script>
+</body>
+</html>

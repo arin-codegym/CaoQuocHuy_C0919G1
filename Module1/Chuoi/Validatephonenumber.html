@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="phone"></label>
+<input type="text" id="phone" onblur="colorCheck(phone.value)" placeholder="phone-number">
+<input type="button" onclick="check(int.value)" value="Check">
+<script>
+    let validPhone = /^[+][8][4][-][1-9][0-9]{8}$/;
+    let int = document.getElementById("phone");
+    let checkVal=false;
+
+
+
+    // /**
+    //  * @return {boolean}
+    //  */
+    /**
+     * @return {boolean}
+     */
+    function check(phone) {
+       // checkVal=true;
+        alert(validPhone.test(phone));
+        return validPhone.test(phone);
+
+    }
+    function colorCheck(value) {
+        console.log(value);
+        checkVal = check(value);
+        if (!checkVal) {
+            int.style.border = "2px solid red";
+        } else {
+            checkVal = true;
+            int.style.border = "2px solid green";
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

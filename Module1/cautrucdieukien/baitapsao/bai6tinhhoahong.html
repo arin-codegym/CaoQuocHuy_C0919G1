@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let giaGoc = 500;
+    let soLuongBanDuoc = parseInt(prompt("so luong san pham da ban duoc"));
+    let giaThiTruong = parseFloat(prompt("nhap gia san pham ban ra thi truong"));
+    let doanhThu = soLuongBanDuoc + giaThiTruong;
+    let loiNhuan = doanhThu - (soLuongBanDuoc * giaGoc);
+    let hoaHong = (loiNhuan / doanhThu) * 100;
+    let tienHoaHong;
+    if (hoaHong > 50) {
+        tienHoaHong = (loiNhuan / 100) * 20;
+    } else if (hoaHong > 30) {
+        tienHoaHong = (loiNhuan / 100 )* 10;
+    } else if (hoaHong > 10) {
+        tienHoaHong = (loiNhuan / 100) * 5;
+    } else {
+        tienHoaHong = (loiNhuan / 100 )* 2;
+    }
+
+
+    document.write("SL ban duoc :" + soLuongBanDuoc +  "</br>"+"tien hoa hong nhan duoc la"+ tienHoaHong)
+</script>
+
+</body>
+</html>

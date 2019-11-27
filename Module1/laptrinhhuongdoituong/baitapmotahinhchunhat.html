@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1366px" height="768px" style="border:1px solid chartreuse"></canvas>
+<script>
+    function Rectangle(x,y,chieuDai,chieuRong){
+        this.x=x;
+        this.y=y;
+        this.chieuDai=chieuDai;
+        this.chieuRong=chieuRong;
+        // this.getX=function () {
+        //     return this.x;
+        // };
+        // this.setX=function (x) {
+        //     this.x=x;
+        // }
+    }
+    function createRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let chieuDai=parseFloat(prompt("nhập vào chiều dài"));
+        let chieuRong=parseFloat(prompt("nhập vào chiều rộng"));
+        alert("diện tích là"+chieuDai*chieuRong);
+        let x = 500;
+        let y = 500;
+        let rectangle= new Rectangle(x, y, chieuDai,chieuRong);
+        ctx.beginPath();
+        ctx.fillStyle="#FF0000";
+        ctx.fillRect(rectangle.x,rectangle.y,rectangle.chieuDai,rectangle.chieuRong);
+        // ctx.fillRect(90,210,200,100);
+        ctx.fill();
+    }
+    createRectangle();
+</script>
+</body>
+</html>l>

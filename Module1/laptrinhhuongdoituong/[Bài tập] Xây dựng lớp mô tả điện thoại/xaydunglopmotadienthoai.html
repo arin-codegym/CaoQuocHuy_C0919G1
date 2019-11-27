@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Mobile(battery, status, draft, inbox, sent) {
+        this.battery = battery;
+        this.status = status;
+        this.draft = draft;
+        this.inbox = inbox;
+        this.sent = sent;
+        this.checkStatus = function () {
+            if (this.battery > 0 && this.battery <= 100 && this.status === true) {
+                alert("dien thoai dang mo");
+                return true;
+
+            } else {
+                alert("dien thoai dang tat");
+                return false;
+
+            }
+        };
+        this.chargeBattery = function () {
+            while (this.battery < 90) {
+                this.battery += 10;
+            }
+        };
+        this.turnOn = function () {
+            this.status = true;
+        };
+        this.turnOff = function () {
+            this.status = false;
+        };
+        this.makeDraft = function () {
+            if (this.checkStatus() === true) {
+                this.draft.push(prompt("moi nhap vao tin nhan"));
+                this.battery--;
+            } else {
+                alert("may dang tat nguon");
+            }
+        };
+        this.sendMessage = function (mobile, message) {
+            if (this.checkStatus() === true) {
+                mobile.inbox.push(message);
+                this.sent.push(message);
+                this.draft.pop();
+                this.battery--;
+                mobile.battery--;
+            } else {
+                alert("may dang tat nguon");
+            }
+        };
+        this.receiveMessage = function () {
+            if (this.checkStatus() === true) {
+                return this.sent;
+                this.battery--;
+            } else {
+                alert("may dang tat nguon");
+            }
+        };
+        this.showInbox = function () {
+            if (this.checkStatus() === true) {
+                alert("showinbox"+this.inbox);
+                this.battery--;
+            } else {
+                alert("may dang tat nguon");
+            }
+        };
+        this.showSent = function () {
+            if (this.checkStatus() === true) {
+                alert("show send:"+this.sent);
+                this.battery--;
+            } else {
+                alert("may dang tat nguon");
+            }
+        };
+    }
+
+    let nokia = new Mobile(100, true, [], [], []);
+    let iphone = new Mobile(100, true, [], [], []);
+    nokia.makeDraft();
+    nokia.sendMessage(iphone, nokia.draft[nokia.draft.length - 1]);
+    iphone.showInbox();
+    nokia.showSent();
+</script>
+</body>
+</html>

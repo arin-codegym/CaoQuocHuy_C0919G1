@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soNguyen= new Array();
+    let dem=1;
+    do {
+        let input = prompt("input a number in array:");
+        soNguyen.push(input);
+        dem++;
+    }while (dem<6);
+    // alert(soNguyen.reverse());
+    let first = 0;
+    let last=soNguyen.length-1;
+    while(first<last) {
+        let b = soNguyen[first];
+        soNguyen[first] = soNguyen[last];
+        soNguyen[last] = b;
+        first++;
+        last--;
+
+
+    }
+    document.write(soNguyen);
+
+
+
+</script>
+</body>
+</html>

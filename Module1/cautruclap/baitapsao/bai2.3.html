@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //let sum = null;
+   // let text = "";
+    // for (let i=1;i<=5;i++){
+    //     sum += "*";
+    //     document.write(sum+"<br/>")
+    // }
+    // let text = "";
+    // for (let i =3; i > 0; i--) {
+    //
+    //     for (let j = 1; j <= i; j++) {
+    //         text +="*"
+    //     }
+    //     document.write( text +"<br>");
+    // }
+
+    let dem1 = "";
+    let dem2 = "";
+    let n = "";
+    // for (let i = 1; i <= 5; i++) {
+    //     dem1 = dem1 + "*";
+    //     document.write(dem1 + "<br>");
+    // }
+    // document.write("<br>");
+    // for (let i = 1; i <= 5; i++) {
+    //     for (let j = 0; j <= 5 - i; j++) {
+    //         document.write("*");
+    //     }
+    //     document.write("<br>");
+    // }
+    // document.write("<br>");
+    for (let i = 1; i <= 5; i++) {
+        dem2 = dem2 + "*";
+        let n = "";
+        for (let j = 0; j <= 5 - i; j++) {
+            n = n + "&nbsp;";
+        }
+        document.write(n + dem2 + "<br>");
+    }
+    document.write("<br>");
+    for (let i = 1; i <= 5; i++) {
+        let dem3 = "";
+        for (let j = 0; j <= 5 - i; j++) {
+            dem3 = dem3 + "*";
+        }
+        n = n + "&nbsp;";
+        document.write(n + dem3 + "<br>");
+    }
+
+
+</script>
+
+</body>
+</html>

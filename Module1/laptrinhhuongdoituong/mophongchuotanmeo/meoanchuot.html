@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="Rat.js"></script>
+<script type="text/javascript" src="Cat.js"></script>
+<script>
+    let arrRat = [];
+    let rat = new Rat();
+    rat.name = "Jerry";
+
+    let slrat = parseInt(prompt("nhap so luong chuot:"));
+    for (i = 0; i < slrat; i++) {
+        arrRat.push(rat);
+    }
+    let cat = new Cat();
+    cat.name= "Tom";
+    //cat.mass = 10;
+    let dem=0;
+    for (let i = 0; i < arrRat.length; i++) {
+        console.log("abc");
+        if (rat.getlive() === "Song") {
+            if (rat.getspeed() < cat.getmaxspeed()) {
+                console.log("an");
+                dem++;
+                cat.geteat();
+            }
+
+        }
+    }
+    alert("Mèo" + cat.name +"bắt được:"+dem+
+        "mèo tăng thêm:" + cat.getmass())
+
+
+</script>
+</body>
+</html>

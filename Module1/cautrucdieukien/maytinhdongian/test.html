@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input name="display" id="result" type="text">
+    <div>
+        <input type="button" value="1" onclick="getValue(this.value)">
+        <input type="button" value="2" onclick="getValue(this.value)">
+        <input type="button" value="3" onclick="getValue(this.value)">
+        <input type="button" value="+" onclick="getValue(this.value)">
+    </div>
+    <div>
+        <input type="button" value="4" onclick="getValue(this.value)">
+        <input type="button" value="5" onclick="getValue(this.value)">
+        <input type="button" value="6" onclick="getValue(this.value)">
+        <input type="button" value="-" onclick="getValue(this.value)">
+    </div>
+    <div>
+        <input type="button" value="7" onclick="getValue(this.value)">
+        <input type="button" value="8" onclick="getValue(this.value)">
+        <input type="button" value="9" onclick="getValue(this.value)">
+        <input type="button" value="*" onclick="getValue(this.value)">
+    </div>
+    <div>
+        <input type="button" value="C" onclick="getValue(this.value)">
+        <input type="button" value="0" onclick="getValue(this.value)">
+        <input type="button" value="=" onclick="caculator()">
+        <input type="button" value="/" onclick="getValue(this.value)">
+    </div>
+
+
+
+<script>
+    var result ="";
+    var displayresult="";
+    var mul = "";
+    var show = document.getElementById("result");
+    function getValue(e) {
+        if(e === "*") {
+            displayresult += "x";
+        }else{
+            displayresult+=e;
+        }
+        result += e;
+        show.value = displayresult;
+    }
+    function caculator() {
+        show.value = eval(result);
+    }
+
+
+</script>
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="Employee.js"></script>
+<script>
+
+    let arrfull = [];
+    let validateEmail = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+
+    function Menu() {
+        let choose = parseInt(prompt("\n1.Login." + "\n2.Register" + "\n3.Exit."));
+        switch (choose) {
+            case 1:
+                Login();
+                break;
+            case 2:
+                Register();
+                break;
+            case 3:
+                break;
+            default:
+                break;
+        }
+    }
+
+    Menu();
+
+
+    function Register() {
+        let nhanvien = new Employee();
+        nhanvien.TenLogin(prompt("username:"));
+        nhanvien.Pass(prompt("Pass:"));
+        nhanvien.TenNv(prompt("Full Name:"));
+        nhanvien.NgaySinh(prompt("Birthday:"));
+        nhanvien.Cmnd(prompt("ID Card:"));
+        nhanvien.DiaChi(prompt("Address:"));
+        nhanvien.SoDienThoai(prompt("Phone Number:"));
+        nhanvien.GioiTinh(prompt("Gander:"));
+        // while (validateEmail) {
+        //     arr.push(nhanvien.Email(prompt("email:")));
+        // }
+
+        arrfull.push(nhanvien);
+
+        Menu();
+
+    }
+
+    function Login() {
+        let login = prompt("username:");
+        let pass = prompt("password:");
+        for (let i = 0; i < arrfull.length; i++) {
+            if (login !== arrfull[i].getTenLogin()) {
+                alert("sai ten dang nhap.");
+            } else if (pass !== arrfull[i][1]) {
+                alert("Sai password!!!");
+            } else {
+                alert("dang nhap thanh cong.")
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>

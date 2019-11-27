@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nameCustomer = "Cao Quoc Huy";
+    let idCard = "123456789";
+    let brithdayCustomer = "11/11/1989";
+    let emailCustomer = "caoquochuy21@gmail.com";
+    let addressCustomer = "Đà Nẵng";
+    let typeCustomer = "Diamond";
+    let discount = 10;
+    let numberAccompanying = 2;
+    let typeRoom = "Business";
+    let rentDays = 3;
+    let typeService = "Villa";
+    let choose = prompt(
+        "1.Show Information Customer.\n" +
+        "2.Edit Information Customer.\n" +
+        "3.Show The Amount To Be Paid After Discount Customer.\n"
+    );
+    switch (choose) {
+        case "1" :
+            alert(
+                "Information Of Customer:\n" +
+                "Name :" + nameCustomer +
+                "\nId Card :" + idCard +
+                "\nBrithday :" + brithdayCustomer +
+                "\nEmail :" + emailCustomer +
+                "\nAddress :" + addressCustomer +
+                "\nType Customer :" + typeCustomer +
+                "\nDiscount : " + discount +
+                "\nAccompanying :" + numberAccompanying +
+                "\nTypeRoom:" + typeRoom +
+                "\nRentDays: " + rentDays +
+                "\nType Service:" + typeService
+            );
+            break;
+        case "2":
+            let chooseEdit = prompt(
+                "Choose Information Of Custome You Want Edit: /n" +
+                "1Name :" + nameCustomer +
+                "\n2.Id Card :" + idCard +
+                "\n3.Brithday :" + brithdayCustomer +
+                "\n4.Email :" + emailCustomer +
+                "\n5.Address :" + addressCustomer +
+                "\n6.Type Customer :" + typeCustomer +
+                "\n7.Discount : " + discount +
+                "\n8.Accompanying :" + numberAccompanying +
+                "\n9.TypeRoom:" + typeRoom +
+                "\n10.RentDays: " + rentDays +
+                "\n11.Type Service:" + typeService
+            );
+            switch (chooseEdit) {
+                case "1":
+                    nameCustomer = prompt("Enter Name You Want Edit:");
+                    break;
+                case "2":
+                    idCard = prompt("Enter IdCard You Want Edit:");
+                    break;
+                case "3":
+                    brithdayCustomer = prompt("Enter Britday You Want Edit:");
+                    break;
+                case "4":
+                    emailCustomer = prompt("Enter Email You Want Edit:");
+                    break;
+                case "5":
+                    addressCustomer = prompt("Enter Address You Want Edit:");
+                    break;
+                case "6":
+                    typeCustomer = prompt("Enter Type Customer  You Want Edit:");
+                    break;
+                case "7":
+                    discount = prompt("Enter Discount You Want Edit:");
+                    break;
+                case "8":
+                    numberAccompanying = prompt("Enter Number Accompany You Want Edit:");
+                    break;
+                case "9":
+                    typeRoom = prompt("Enter Type Room You Want Edit:");
+                    break;
+                case "10":
+                    rentDays = prompt("Enter Rendays You Want Edit:");
+                    break;
+                case "11":
+                    typeService = prompt("Enter Type Service You Want Edit:");
+                    break;
+                default:
+                    alert("Failed");
+                    break;
+
+            }
+            alert(
+                "Information Of Customer:\n" +
+                "Name :" + nameCustomer +
+                "\nId Card :" + idCard +
+                "\nBrithday :" + brithdayCustomer +
+                "\nEmail :" + emailCustomer +
+                "\nAddress :" + addressCustomer +
+                "\nType Customer :" + typeCustomer +
+                "\nDiscount : " + discount +
+                "\nAccompanying :" + numberAccompanying +
+                "\nTypeRoom:" + typeRoom +
+                "\nRentDays: " + rentDays +
+                "\nType Service:" + typeService
+            );
+            break;
+        case "3" :
+            let moneyPerDays = 0;
+            if (typeService === "Villa") {
+                moneyPerDays = 500;
+            } else if (typeService === "House") {
+                moneyPerDays = 300;
+            } else
+                moneyPerDays = 100;
+            let discountConditon = 0;
+            let currentYear = new Date().getFullYear();
+            let britday = new Date(brithdayCustomer).getFullYear();
+            let ageCustumers = currentYear - britday;
+            if (addressCustomer === "Đà Nẵng") {
+                discountConditon += 20;
+                if (ageCustumers >= 30) {
+                    discountConditon += 2;
+                } else if (ageCustumers >= 20) {
+                    discountConditon += 1;
+                }
+            } else if (addressCustomer === "Huế") {
+                discountConditon += 10;
+            }
+            esle
+            if (addressCustomer === "Quảng Nam") {
+                discountConditon += 5;
+            }
+            if (rentDays > 7) {
+                discountConditon += 30;
+            } else if (rentDays >= 5) {
+                discountConditon += 20;
+
+            } else if (rentDays >= 2) {
+                discountConditon += 10;
+            }
+            if (typeCustomer==="Diamond"){
+                discountConditon += 15;
+            } else if (typeCustomer==="Platinum") {
+                discountConditon += 10;
+            } else if (typeCustomer==="Gold"){
+                discountConditon += 5;
+            } else if (typeCustomer==="Silver") {
+                discountConditon += 2;
+            }
+            let totalPays = moneyPerDays * rentDays * (1 - discount/100);
+            totalPays = totalPays - discountConditon;
+            alert("Total Pays After Discount Condition:"+ totalPays);
+
+
+            break;
+        default:
+            alert("Fail!!!");
+            break;
+
+
+    }
+
+
+    // alert(
+    //     "Information Of Customer:\n" +
+    //     "Name :" + nameCustomer +
+    //     "\nId Card :" + idCard +
+    //     "\nBrithday :" + brithdayCustomer +
+    //     "\nEmail :" + emailCustomer +
+    //     "\nAddress :" + addressCustomer +
+    //     "\nType Customer :" + typeCustomer +
+    //     "\nDiscount : " + discount +
+    //     "\nAccompanying :" + numberAccompanying +
+    //     "\nRentDays: " + rentDays +
+    //     "\nTypeRoom:" + typeService+
+    //     "\nTotalPays :" + totalPays
+    // );
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

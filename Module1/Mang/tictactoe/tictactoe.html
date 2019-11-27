@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<form>
+    <h3>TIC TAC TOE</h3>
+    <p id="display"></p>
+    <input type="button" value="Person 1" onclick="changeX()">
+    <input type="button" value="Person 2" onclick="changeO()">
+</form>
+<script>
+    let display = document.getElementById("display");
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 10; i++) {
+        if (i === 0) {
+            board[i] = [" ", 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            continue;
+        }
+        board[i] = [i, ".", ".", ".", ".", ".", ".", ".", ".", ".", "."]
+    }
+    for (let x = 0; x < board.length; x++) {
+        data += "<br/>";
+        for (let y = 0; y < board[x].length; y++) {
+            data += board[x][y] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+    }
+    display.innerHTML = "<hr/>" + data;
+    function changeX() {
+        let positionY = prompt("Enter position x:");
+        let positionX = prompt("Enter position y:");
+        board[positionX][positionY] = "x";
+        data = "";
+        for (let x = 0; x < board.length; x++) {
+            data += "<br/>";
+            for (let y = 0; y<board[x].length;y++){
+                data+=board[x][y] +"&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        display.innerHTML = "<hr/>" + data;
+    }
+    function changeO() {
+        let positionY = prompt("Enter position x:");
+        let positionX = prompt("Enter position y:");
+        board[positionX][positionY] = "o";
+        data = "";
+        for (let x = 0; x < board.length; x++) {
+            data += "<br/>";
+            for (let y = 0; y<board[x].length;y++){
+                data+=board[x][y] +"&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        display.innerHTML = "<hr/>" + data;
+    }
+</script>
+</body>
+</html>

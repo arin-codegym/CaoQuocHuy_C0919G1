@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let element = parseInt(prompt("element in arrayInt"));
+    let arrInt = new Array(element);
+
+    let dem = 0;
+    let result = "";
+    for (let i = 0; i < element; i++) {
+        let int = parseInt(prompt(" a number is"));
+        arrInt[i] = int;
+    }
+
+    for (let i = 0; i < arrInt.length; i++) {
+
+        if (arrInt[i] > 10) {
+
+            result += arrInt[i] + "<br/>";
+            dem++;
+        }
+    }
+    document.write(
+        "The number of elements greater than 10 is:" + dem +  "<br/>"+
+        "those elements are :" + result);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[];
+    let n = parseInt(prompt("nhap mang co n phan tu:"));
+    while (n <= 6) {
+        alert("n phai lon hon 6!!!");
+        n = parseInt(prompt("nhap mang co n phan tu:"));
+    }
+    if (n>6){
+        for (let i =0;i<n;i++){
+            let element=prompt("nhap phan tu thu"+i);
+            arr.push(element);
+        }
+    }
+    alert  (arr.sort(function (a,b){return a-b})) ;
+</script>
+</body>
+</html>

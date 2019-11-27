@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let txt;
+    let dem=0;
+    do {
+        txt = prompt("nhap dong ky tu");
+        arr.push(txt);
+    } while (txt !== null);
+    arr.pop();
+    for (let i in arr){
+        if ( !isNaN(arr[i])) {
+            dem++;
+        }
+    } alert("co"+dem);
+
+</script>
+</body>
+</html>

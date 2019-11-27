@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let element = parseInt(prompt("element in arrayInt"));
+    let arrInt = new Array(element);
+    let dem =0;
+    for (let i = 0; i < element; i++) {
+        let int = parseInt(prompt(" a number is"));
+        arrInt[i] = int;
+    }
+    for (var i = 0; i < arrInt.length; i++) {
+        if (arrInt[i] < 0) {
+            dem++;
+
+
+        }
+    }
+    alert(dem  + "so nguyen am");
+</script>
+
+</body>
+</html>

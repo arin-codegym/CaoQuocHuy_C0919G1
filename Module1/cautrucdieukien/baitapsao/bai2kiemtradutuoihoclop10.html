@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let result ;
+    let year = parseInt(prompt("year is:"));
+    let check = 1920 > year || year > 2020;
+    while (check) {
+
+        alert("year is valid!!!");
+        year = parseInt(prompt("year is:"));
+
+    }
+    let toan = parseFloat(prompt("nhap diem toan:"));
+    let ly = parseFloat(prompt("nhap diem toan:"));
+    let hoa = parseFloat(prompt("nhap diem toan:"));
+    result = toan + ly + hoa;
+
+    if (year < 2013)
+        if (result >= 20) {
+            alert("du tuoi hoc lop 10")
+        } else {
+            alert(" du tuoi nhung qua dot khong du trinh hoc lop 10");
+        } else{
+            alert("chua du tuoi hoc lop 10")
+    }
+
+
+</script>
+</body>
+</html>

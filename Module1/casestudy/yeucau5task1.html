@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustomers = [];
+
+    function displayMainMenu() {
+        let choose = prompt(
+            "1. Add New Customer." +
+            "\n2.Display Information Customer." +
+            "\n3.Edit Information Customer." +
+            "\n4.Delete Customer." +
+            "\n5.Exit."
+        );
+        switch (choose) {
+            case "1" :
+                addNewCustomer();
+                break;
+            case "2" :
+                displayCustomers();
+                break;
+            case "3" :
+                break;
+            case "4" :
+                break;
+            case "5" :
+                return;
+
+            default:
+                alert("Fail !!!");
+                break;
+
+        }
+    }
+
+    function addNewCustomer() {
+        let arrInfo = [];
+        let nameCustomer = prompt("Enter Name Customer:");
+        let idCard = prompt("Enter Id Card Customer:");
+        let brithdayCustomer = prompt('Enter Brithday Customer (dd/MM/YYYY):');
+        let emailCustomer = prompt('Enter Email Customer:');
+        let addressCustomer = prompt('Enter Address Customer:');
+        let typeCustomer = prompt('Enter Type Customer:');
+        let discount = prompt("Enter Discount:");
+        let numberAccompanying = prompt("Enter NumberAccompanying:");
+        let typeRoom = prompt("Type Room");
+        let rentDays = prompt("Enter renDays:");
+        let typeService = prompt("Enter Type Service:");
+        arrInfo.push(nameCustomer);
+        arrInfo.push(idCard);
+        arrInfo.push(brithdayCustomer);
+        arrInfo.push(emailCustomer);
+        arrInfo.push(addressCustomer);
+        arrInfo.push(typeCustomer);
+        arrInfo.push(discount);
+        arrInfo.push(numberAccompanying);
+        arrInfo.push(typeRoom);
+        arrInfo.push(rentDays);
+        arrInfo.push(typeService);
+        arrListCustomers.push(arrInfo);
+        displayMainMenu();
+    }
+
+    function displayCustomers() {
+        let result = "";
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            result += "\n" + (i + 1) + "." + "Name:" + arrListCustomers[i][0] +
+                "; Id Card :" + arrListCustomers[i][1];
+        }
+        result += "\n" + (arrListCustomers.length + 1) + ".Back to Menu.";
+        let chooseDisplayInfo = prompt(result);
+        if (chooseDisplayInfo !== (arrListCustomers.length+1).toString()) {
+            displayInfomationCustomer(Number.parseInt(chooseDisplayInfo) - 1);
+         }
+
+        else {
+            displayMainMenu();
+        }
+
+    }
+
+    function displayInfomationCustomer(index) {
+        alert("Information Of Customer:\n" +
+            "Name :" + arrListCustomers[index][0] +
+            "\nId Card :" + arrListCustomers[index][1] +
+            "\nBrithday :" + arrListCustomers[index][2] +
+            "\nEmail :" + arrListCustomers[index][3] +
+            "\nAddress :" + arrListCustomers[index][4] +
+            "\nType Customer :" + arrListCustomers[index][5] +
+            "\nDiscount : " + arrListCustomers[index][6] +
+            "\nAccompanying :" + arrListCustomers[index][7] +
+            "\nTypeRoom:" + arrListCustomers[index][8] +
+            "\nRentDays: " + arrListCustomers[index][9] +
+            "\nType Service:" + arrListCustomers[index][10]
+        );
+
+    }
+
+    displayMainMenu()
+
+
+</script>
+</body>
+</html>

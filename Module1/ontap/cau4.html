@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="hocsinh.js"></script>
+<script>
+    let arr = [];
+    function Main() {
+        let choose = parseInt(prompt("\n1.Thêm học sinh" +
+            "\n2.Thông tin học sinh" +
+            "\n3.Thoát."));
+        switch (choose) {
+            case 1:
+                add();
+                break;
+            case 2:
+                display();
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    Main();
+
+    function add() {
+        let hocsinh = new HocSinh();
+        hocsinh.Sothutu(prompt("Số thứ tự:"));
+        hocsinh.Hovaten(prompt("Họ và tên:"));
+        hocsinh.Ngaysinh(prompt("Ngày sinh:"));
+        hocsinh.Diemtrungbinh(prompt("Điểm trung binh:"));
+        arr.push(hocsinh);
+        Main();
+        //console.log(hocsinh.getSothutu());
+    }
+
+    function display() {
+        let res = "";
+
+        for (let i = 0; i < arr.length; i++) {
+            res += "\n" + (i + 1) + ":" + arr[i].getHovaten();
+        }
+        let choose = parseInt(prompt(res));
+        if (choose !==0) {
+            alert("Số thứ tự:" + arr[choose-1].getSothutu() +
+                "\nHọ và tên:" + arr[choose-1].getHovaten() +
+                "\nNgày sinh:" + arr[choose-1].getNgaysinh() +
+                "\nĐiẻm trung binh:" + arr[choose-1].getDiemtrungbinh() +
+                "\nHọc lực:" + arr[choose-1].Xeploai())
+        }else (Main());
+
+    }
+</script>
+</body>
+</html>

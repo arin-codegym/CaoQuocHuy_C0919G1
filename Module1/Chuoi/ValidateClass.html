@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="ValidateTenLopHoc.js"></script>
+</head>
+<body>
+<form>
+    <p>INPUT CLASS</p>
+    <label for="class"></label>
+    <input type="text" id="class">
+    <input type="button" onclick="Click()" value="Check">
+    <p id="output"></p>
+</form>
+
+<script>
+    let input=document.getElementById("class");
+    function Click() {
+        if(checkClassName(input.value)){
+            document.getElementById("output").innerHTML=input.value;
+        }else
+            alert("Sai");
+    }
+    function checkClassName(val) {
+        let reg=/^[C][0-9][0-9][GHI][1-9]*/;
+        return reg.test(val);
+    }
+</script>
+</body>
+</html>

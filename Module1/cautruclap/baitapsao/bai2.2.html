@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num  = null;
+    let temp = 1;
+    let factorial = 1;
+    while(num < 1 || num >10){
+        num = parseInt(prompt("Enter Number : "));
+        while (temp <=num){
+            factorial *=temp;
+            temp ++;
+        }
+    }
+    document.write("Số Giai thừa : " +factorial);
+
+</script>
+
+</body>
+</html>

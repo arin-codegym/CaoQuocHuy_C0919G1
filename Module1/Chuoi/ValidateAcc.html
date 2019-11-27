@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="acc">Validate Account</label>
+<input id="acc" type="text" >
+<button id="checkEmail" type="button" onclick="ValidateAcc(acc.value)" >Enter</button>
+<script>
+    let acc=document.getElementById("acc");
+    acc.focus();
+    let validateAcc=/^[_a-z0-9]{6,}$/;
+
+    function ValidateAcc(account) {
+
+        alert(validateAcc.test(account));
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Number a is:"));
+    let b = parseInt(prompt("Number b is:"));
+    let c = parseInt(prompt("Number c is:"));
+
+
+    function findMax(a,b,c) {
+        if (a > b)
+            if (a > c) {
+                return "a="+a +"lon nhat";
+            } else {
+                return "c="+c +"lon nhat";
+            } else if (b > c) {
+            return "b="+b +"lon nhat";
+        } else {
+            return "c="+c +"lon nhat";
+        }
+
+
+    }
+    alert(findMax(a,b,c));
+</script>
+</body>
+</html>

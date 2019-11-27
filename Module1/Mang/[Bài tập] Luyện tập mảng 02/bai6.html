@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhap chuoi");
+//
+    str =  Array.from(str);
+    for (let i=0;i<str.length;i++) {
+        if ( str[i] === "-") {
+            str[i] = "_";
+            //str.splice(i, 1, "_");
+        }
+    };
+    // let a=str.join("");
+    alert(str.join(" "));
+    /*string khong cho su dung phuong thuc gan du lieu*/
+
+
+</script>
+</body>
+</html>

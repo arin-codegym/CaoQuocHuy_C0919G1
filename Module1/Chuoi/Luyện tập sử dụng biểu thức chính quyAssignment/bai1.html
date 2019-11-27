@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let int=prompt("nhap dinh dang dd/mm/yyyy");
+    let patt = /^[0-9]{2}[/][0-9]{2}[/][0-9]{4}$/;
+    function check(date) {
+       if (patt.test(date)){
+           alert("ok");
+       } else {
+           alert("Fail!!!");
+       }
+    }
+   check(int.toString());
+</script>
+
+</body>
+</html>

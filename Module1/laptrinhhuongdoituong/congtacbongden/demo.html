@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>SwitchButton</label>
+<input type="button" onclick="connectLamp()" value="ConnectToLamp"/>
+<input type="button" onclick="chooseOn()" value="ON"/>
+<input type="button" onclick="chooseOff()" value="OFF"/><br>
+<label>ElectricLamp</label>
+<img src="Den_Tat.gif" id="light">
+<input id="lamp" type="text" placeholder="status"/>
+
+<script>
+    var SwitchButton = function () {
+        this.swichOn = function () {
+            return "is on";
+        }
+        this.swichOff = function () {
+            return "is off";
+        }
+        this.setStatus = function (status) {
+            this.status = status;
+        }
+        this.getStatus = function () {
+            return this.status;
+        }
+    };
+    var Lamp = function () {
+        this.setStatus = function (status) {
+            this.status = status;
+        };
+        this.getStatus = function () {
+            return this.status;
+        };
+        this.turnOn = function () {
+            return "is on";
+        };
+        this.turnOff = function () {
+            return "is off";
+        }
+    };
+    var swichButton = new SwitchButton();
+    var lamp = new Lamp();
+   // let check = connectLamp();
+
+
+    function connectLamp() {
+        swichButton.setStatus(true);
+        lamp.setStatus(true);
+        document.getElementById("lamp").value = "Đã kết nối";
+
+
+
+    }
+
+    function chooseOn() {
+
+        if (lamp.getStatus(true) &&  swichButton.getStatus(true)) {
+
+            document.getElementById("lamp").value = swichButton.swichOn();
+}else{
+
+            document.getElementById("light").src = "Den_Sang.gif";
+            document.getElementById("lamp").value = lamp.turnOn();
+        }
+    }
+
+    function chooseOff() {
+
+        swichButton.status = false;
+        lamp.status = false;
+        document.getElementById("light").src = "Den_Tat.gif";
+        document.getElementById("lamp").value = lamp.turnOff();
+    }
+
+
+</script>
+
+</body>
+</html>

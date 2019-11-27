@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let checkValidate = false;
+    let emailCustomer;
+    let brithdayCustomer;
+    let idCard;
+    let discount;
+    let nameCustomer = prompt("Enter Name Customer:");
+    let nameStandardizer= "";
+
+    nameCustomer=nameCustomer.trim().toLocaleLowerCase();
+    for (var i =0;i<nameCustomer.length;i++){
+        if (nameCustomer.charAt(i)=== " " && nameCustomer.charAt(i+1) === " "){
+            continue;
+        }
+        if (i===0 || nameCustomer.charAt(i-1) === " " ){
+            nameStandardizer += nameCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+
+        nameStandardizer += nameCustomer.charAt(i);
+    }
+    nameCustomer=nameStandardizer;
+
+
+    // let nameCustomer = prompt("Enter Name Customer:");
+    // do {
+    //     checkValidate = false;
+    //     idCard = prompt("Enter Id Card Customer:");
+    //     if (isNaN(idCard)) {
+    //         alert("ID card invalid !!!Please try again");
+    //         continue;
+    //
+    //     }
+    //     idCard = Number.parseFloat(idCard);
+    //     if (!Number.isInteger(idCard)){
+    //         alert("ID card invalid !!!Please try again");
+    //         continue;
+    //     }
+    //     if (idCard>=100000000 && idCard<1000000000) {
+    //         checkValidate= true;
+    //     }
+    // } while (!checkValidate);
+    //
+    // do {
+    //     brithdayCustomer = false;
+    //     brithdayCustomer = prompt('Enter Brithday Customer (dd/MM/YYYY):');
+    //     if (brithdayCustomer.charAt(2) !== "/" && brithdayCustomer.charAt(5) !== "/") {
+    //         alert("Brithday is invalid !!! Please try agian");
+    //         continue;
+    //     }
+    //     let day = brithdayCustomer.substring(0, 2);
+    //     let month = brithdayCustomer.substring(3, 5);
+    //     let year = brithdayCustomer.substring(6, 10);
+    //     if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+    //         day = Number.parseFloat(day);
+    //         month = Number.parseFloat(month);
+    //         year = Number.parseFloat(year);
+    //         if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+    //             if (day > 0 && day < 32 && month < 13 && month > 0 && year > 1900 && year < 2020) {
+    //                 checkValidate = true;
+    //             }
+    //         }
+    //
+    //     }
+    //     if (!checkValidate) {
+    //         alert(" Brithday is invalid !!! Please try again");
+    //     }
+    // } while (!checkValidate);
+    //
+    // do {
+    //     checkValidate = true;
+    //     emailCustomer = prompt('Enter Email Customer:');
+    //     let countAt = 0;
+    //     let countDoc = 0;
+    //     for (let i = 0; i < emailCustomer.length; i++) {
+    //         if (emailCustomer.charAt(i) === "@") {
+    //             countAt++;
+    //         }
+    //         if (emailCustomer.charAt(i) === ".") {
+    //             countDoc++;
+    //         }
+    //     }
+    //     if (countAt !== 1 || countDoc < 1) {
+    //         checkValidate = false;
+    //         alert("Email is invalid !!! please try again");
+    //     }
+    // }
+    // while (!checkValidate) ;
+
+
+    // let addressCustomer = prompt('Enter Address Customer:');
+    // let typeCustomer = prompt('Enter Type Customer:');
+    do {
+        checkValidate = false;
+        discount = prompt("Enter Discount:");
+        if (!isNaN(discount)) {
+            discount = Number.parseFloat(discount);
+            if (discount >= 0) {
+                checkValidate = true;
+            }
+        }
+        if (checkValidate === false) {
+            alert("Email is invalid!!! please try again ");
+        }
+    } while (!checkValidate);
+
+    // let numberAccompanying = prompt("Enter NumberAccompanying:");
+    // let typeRoom = prompt("Type Room");
+    // let rentDays = prompt("Enter renDays:");
+    // let typeService = prompt("Enter Type Service:");
+    // let totalPays = 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(discount)/100);
+    alert(
+        //"Information Of Customer:\n" +
+         "Name :" + nameCustomer +
+        "\nId Card :" + idCard +
+        "\nBrithday :" + brithdayCustomer +
+        "\nEmail :" + emailCustomer +
+        // "\nAddress :" + addressCustomer +
+        // "\nType Customer :" + typeCustomer +
+        "\nDiscount : " + discount
+        // "\nAccompanying :" + numberAccompanying +
+        // "\nTypeRoom:" + typeRoom+
+        // "\nRentDays: " + rentDays +
+        // "\nType Service:" + typeService+
+        // "\nTotal Pays :" + totalPays
+    )
+
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

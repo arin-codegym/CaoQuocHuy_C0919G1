@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</title>
+</head>
+<body>
+<script>
+
+    let array = [];
+
+    function reverse() {
+        let element;
+
+
+        do {
+            element = parseInt(prompt("Nhập số nguyên. Kết thúc bằng nút Hủy hoặc ký tự chữ."));
+            console.log(typeof element);
+            array.push(element);
+        }
+        while (!isNaN(element));
+        array.pop();
+        //return  array;
+        /*Nhanh gọn lẹ thì dùng hàm có sẵn ở dưới*/
+        //array.reverse();
+        let dau = 0;
+        let cuoi=array.length-1;
+        while (dau<cuoi){
+            let step=array[dau];
+            array[dau]=array[cuoi];
+            array[cuoi]=step;
+            dau++;
+            cuoi--;
+
+        }
+         return array;
+    //
+    }
+    console.log(reverse())
+
+</script>
+</body>
+</html>

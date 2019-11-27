@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form></form>
+<input id="num" type="text">
+<select id="feet">
+    <option value="feet">Feet</option>
+    <option value="meters">Meters</option>
+</select>
+==========>>>>>
+<select id="meters">
+    <option value="feet">Feet</option>
+    <option value="meters">Meters</option>
+
+</select>
+<button type="button" onclick="change()" value="Change">Change</button>
+<p id="Result"></p>
+</form>
+
+<script>
+    let number = document.getElementById("num");
+    let feeL = document.getElementById("feet");
+    let meterS = document.getElementById("meters");
+    let result = 0;
+
+    function change() {
+        if (feeL.value === "feet" && meterS.value === "meters") {
+            result = number.value * 0.305;
+
+        } else if (feeL.value === "meters" && meterS.value === "feet") {
+            result = number * 3.279;
+        } else {
+            result = number.value;
+        }
+
+
+        document.getElementById("Result").innerText = ("Result :     " + result);
+    }
+
+</script>
+</body>
+</html>

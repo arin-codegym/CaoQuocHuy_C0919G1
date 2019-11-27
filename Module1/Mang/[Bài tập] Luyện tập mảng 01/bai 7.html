@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array = new Array();
+    var check = false;
+    var dem = 0;
+    do {
+        var input = parseInt(prompt("nhap gia tri mang:"));
+        array.push(input);
+        dem++;
+    } while (dem < 10);
+    var v = prompt("nhap V") * 1;
+    for (var i = 0; i < array.length; i++) {
+         if (array[i] === v) {
+            check = true;
+            array[i] = array[i + 1];
+            array[array.length - 1] = 0;
+            document.write(array);
+            break;
+        }
+
+    }
+
+    if (!check){
+
+        document.write("V  is not the array")
+
+    }
+
+
+</script>
+
+</body>
+</html>

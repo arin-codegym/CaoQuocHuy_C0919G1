@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Apple = function(){
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getWeight = function(){
+            return this.weight;
+        }
+
+    };
+
+    var Human = function(){
+        this.setName = function (name) {
+            this.name = name;
+        }
+        this.getName = function(){
+            return this.name;
+        }
+        this.setGender = function (gender) {
+            this.gender = gender;
+        }
+        this.getGender = function(){
+            return this.gender;
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+        this.getWeight= function(){
+            return this.weight;
+        }
+        this.Say = function(){
+            return console.log(this.status);
+        }
+        this.Eat = function(apple){
+            apple.setWeight(apple.getWeight() -1 );
+            this.setWeight(this.getWeight() + 1);
+        }
+        this.Check = function (apple) {
+            apple.setWeight(apple.getWeight());
+        }
+
+    };
+
+    let result;
+    let apple = new Apple();
+    apple.setWeight(prompt("nhap tao"));
+
+    let adam = new Human();
+    adam.setGender("Nam");
+    adam.setName("adam");
+    adam.setWeight(60);
+    adam.Eat(apple);
+    adam.Check(apple);
+
+    let eva = new Human();
+    eva.setGender("Nu");
+    eva.setName("eva");
+    eva.setWeight(50);
+
+    while(apple.weight>0){
+        adam.weight++;
+        eva.weight++;
+        apple.weight-=2;
+    }
+    alert(adam.name +"giới tính"+adam.gender +"cân nặng"+ adam.weight + eva.name+"giới tinh" +"cân nặng"+ eva.weight);
+
+</script>
+
+</body>
+</html>

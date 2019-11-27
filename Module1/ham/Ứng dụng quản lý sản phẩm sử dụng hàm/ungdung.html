@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="Tên sản phẩm" id="sanPham">
+<input type="submit" id="add" value="Add" onclick="addSanPham()">
+<h3>Display All Product</h3>
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <td>Name</td>-->
+<!--        <td>Edit</td>-->
+<!--        <td>Delete</td>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--        <td>Iphone 5</td>-->
+<!--        <td><input type="button" value="Edit"></td>-->
+<!--        <td><input type="button" value="Delete"></td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+
+<!--</table>-->
+<div id="disPlay">
+
+</div>
+<div>
+
+</div>
+
+<script>
+    let sp=document.getElementById("sanPham");
+
+    let arrSanPham=["Sony Xperia", "Samsung Galaxy"];
+    // function addSanPham() {
+    //     arrSanPham.push(sp.value);
+    //     let result="";
+    //     for (let i = 0;i<arrSanPham.length;i++){
+    //         result+=arrSanPham[i] + " <input type=\"button\" value=\"Edit\" onclick=\"edit()\"><br/>";
+    //     }
+    //     document.getElementById("disPlay").innerHTML=result;
+    //
+    // }
+    var str =  "Thanh Kien";
+    var c = str.charAt(5).toUpperCase();
+console.log(c)
+
+</script>
+</body>
+</html>

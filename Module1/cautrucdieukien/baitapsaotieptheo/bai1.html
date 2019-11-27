@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input placeholder="temperature" id="num">
+<select id="convert">
+    <option value="Temp C">Temp C</option>
+    <option value="Temp F">Temp F</option>
+
+</select>
+
+<button type="button" onclick="conVert()">ConVert</button>
+<p id="result"></p>
+<script>
+    let inputTemp = document.getElementById("num");
+    let selectTemp = document.getElementById("convert");
+    let result ;
+
+    function conVert() {
+        if (selectTemp.value === "Temp C") {
+            result = (inputTemp.value * 9 + 160) / 5;
+
+        } else {
+            result = (inputTemp.value - 32) * 5 / 9;
+        }
+        document.getElementById("result").innerText = ("result"+result);
+    }
+</script>
+
+
+</body>
+</html>

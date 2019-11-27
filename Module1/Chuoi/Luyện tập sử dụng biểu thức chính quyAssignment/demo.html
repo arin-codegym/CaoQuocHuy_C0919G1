@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1, 5, 'a', 3, 'f', '3', 5, 3, 'b', 'c', 'f'];
+    console.log("goc:" + arr);
+
+    function del(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr);
+            arr.length--;
+            for (let j = i + 1; j < arr.length; j++) {
+
+                if (arr[i] === arr[j]) {
+                    arr.splice(j, 1);
+                    console.log(arr);
+                    j--;
+                    return arr;
+                }
+            }
+        }
+    }
+
+    console.log(del(arr));
+    // function deduplicate(arr) {
+    //     let set = new Set(arr);
+    //     return Array.from(set);
+    // }
+    // console.log(deduplicate(arr))
+
+    // let ans = deduplicate(arr);
+    //  console.log(ans);
+    //  // Expected output: [1, 5, "a", 3, "f", "3", "b", "e"]
+    //
+    //  function deduplicate(arr) {
+    //      let isExist = (arr, x) => {
+    //          for(let i = 0; i < arr.length; i++) {
+    //              if (arr[i] === x) return true;
+    //          }
+    //          return false;
+    //      };
+    //
+    //      let ans = [];
+    //      arr.forEach(element => {
+    //          if(!isExist(ans, element)) ans.push(element);
+    //      });
+    //      return ans;
+    //  }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let element = parseInt(prompt("element in arrayInt"));
+    let arrInt = [];
+    let n = 1;
+    let dem = 0;
+    let count = 0;
+    let max;
+
+
+    while (n <= element) {
+        int = parseInt(prompt(" a number is"));
+        n++;
+        arrInt.push(int);
+    }
+    max = arrInt[0];
+
+    for (var i = 0; i < arrInt.length; i++) {
+        if (arrInt[i] > max) {
+            max = arrInt[i];
+        }
+        count += arrInt[i];
+    }
+    gttb = count / (arrInt.length);
+    result = "max=" + max + "\nThe average value :"+gttb;
+    alert(result);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</title>
+</head>
+<body>
+<script>
+    let radius = parseFloat(prompt("input a radius:"));
+
+    while (radius < 0) {
+        alert("Bán kính là một số nguyên dương:");
+        radius = parseFloat(prompt("input a radius:"));
+
+    }
+    function diameterOfACircle(r) {
+        return 2*r*Math.PI;
+    }
+    function circleArea(r) {
+        return Math.pow(r,2)*Math.PI;
+    }
+    alert("diameterOfACircle: "+diameterOfACircle(radius)+"\ncircleArea"+circleArea(radius));
+</script>
+
+</body>
+</html>

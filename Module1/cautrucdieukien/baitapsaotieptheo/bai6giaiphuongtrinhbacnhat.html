@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="number" placeholder="Enter a num ber a" id="heSoA" >
+    <input type="number" placeholder="Enter a num ber b" id="heSoB">
+    <button type="button" onclick="TinhToan()">Result</button>
+    <p id="Result"></p>
+
+</form>
+<script>
+    let a = document.getElementById("heSoA");
+    // console.log(typeof (a.value));
+    let b = document.getElementById("heSoB");
+    let result;
+
+    function TinhToan() {
+
+        if (a.value*1 === 0)
+            if (b.value*1 === 0) {
+                document.getElementById("Result").innerText = "PT co vo so nghiem";
+            }else {
+                document.getElementById("Result").innerText = "PT  vo  nghiem";
+            }else {
+                result = -b.value/a.value;
+            document.getElementById("Result").innerText = "PT co  nghiem"+result;
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

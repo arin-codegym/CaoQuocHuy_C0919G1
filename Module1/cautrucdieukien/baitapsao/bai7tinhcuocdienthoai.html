@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function menu() {
+
+        let choose = parseInt(prompt("chon nha mang:" +
+            "\n1.VNPT" +
+            "\n2.Mobifone" +
+            "\n3.Vinafone"
+        ));
+
+        switch (choose) {
+            case 1 :
+                VNPT();
+                break;
+            default:
+                alert("Vui lòng chọn đúng nhà mạng theo số thứ tự");
+                menu();
+
+        }
+    }
+
+    menu();
+
+    function VNPT() {
+        let block6sFist;
+        let blockAfter6s;
+        let timeCall;
+        let cuoc;
+        let chooseKyThuat;
+        let chooseNoiMangOrDoanhNghiep = parseInt(prompt("Chon:" + "\n1.Gọi nội mạng VNPT" + "\n2.Gọi mạng doanh nghiệp khác"));
+        switch (chooseNoiMangOrDoanhNghiep) {
+            case 1:
+                chooseKyThuat = parseInt(prompt("chon" + "\n1.Mạng  PSTN" + "\n2.VoIP 171"));
+                while (chooseKyThuat < 0 || chooseKyThuat > 3) {
+                    chooseKyThuat = parseInt(prompt("chon" + "\n1.Mạng  PSTN" + "\n2.VoIP 171"));
+                }
+                if (chooseKyThuat === 1) {
+                    block6sFist = 80;
+                    blockAfter6s = 13.33;
+                    timeCall = parseFloat(prompt("Điền số phút đã sử dung/ tinh theo đơn vị giây:"));
+                    if (timeCall < 6) {
+                        cuoc = block6sFist;
+
+                    } else {
+                        cuoc = block6sFist + timeCall * blockAfter6s;
+                    }
+                }
+                if (chooseKyThuat === 2) {
+                    block6sFist = 68;
+                    blockAfter6s = 11.33;
+                    timeCall = parseFloat(prompt("Điền số phút đã sử dung/ tinh theo đơn vị giây:"));
+                    if (timeCall < 6) {
+                        cuoc = block6sFist;
+                    } else {
+                        cuoc = block6sFist + timeCall * blockAfter6s;
+                    }
+                }
+                break;
+            case 2 :
+                chooseKyThuat = parseInt(prompt("chon" + "\n1.Mạng  PSTN" + "\n2.VoIP 171"));
+                while (chooseKyThuat < 0 || chooseKyThuat > 3) {
+                    chooseKyThuat = parseInt(prompt("chon" + "\n1.Mạng  PSTN" + "\n2.VoIP 171"));
+                }
+                if (chooseKyThuat === 1) {
+                    block6sFist = 89.09;
+                    blockAfter6s = 14.85;
+                    timeCall = parseFloat(prompt("Điền số phút đã sử dung/ tinh theo đơn vị giây:"));
+                    if (timeCall < 6) {
+                        cuoc = block6sFist;
+
+                    } else {
+                        cuoc = block6sFist + timeCall * blockAfter6s;
+                    }
+                }
+                if (chooseKyThuat === 2) {
+                    block6sFist = 75.73;
+                    blockAfter6s = 12.62;
+                    timeCall = parseFloat(prompt("Điền số phút đã sử dung/ tinh theo đơn vị giây:"));
+                    if (timeCall < 6) {
+                        cuoc = block6sFist;
+                    } else {
+                        cuoc = block6sFist + timeCall * blockAfter6s;
+                    }
+                }
+                break;
+
+        } alert("Cước phí là:" + cuoc)
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

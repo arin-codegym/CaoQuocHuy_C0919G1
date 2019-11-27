@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dem so nguyen am phu am trong chuoi</title>
+</head>
+<body>
+<script>
+    let str = prompt();
+    let vowel = /[aeoiu]/gi;
+    let consonant = /[bcdfghjklmnpqrstvwxyz]/gi;//
+    let resVowel = str.match(vowel);
+    let resConsonat = str.match(consonant);
+    resVowel = resVowel.join("");
+    resConsonat = resConsonat.join("");
+    alert("chuỗi có" + resVowel.length +"nguyên âm"+"và  nguyên âm đó là:"+deduplicate(resVowel)+ "<br/>"+
+        "chuỗi có" + resConsonat.length +"phụ âm"+"và  phụ âm đó là:"+deduplicate(resConsonat)
+        );
+    function deduplicate(arr) {
+        let set = new Set(arr);
+        return Array.from(set);
+    }
+    // arr = arr.filter(function(item) {
+    //     return item !== value
+    // });
+    /* sau khi vat va nghien cuu thuat toan da chay dc nhung chua test
+    function del(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr);
+            arr.length--;
+            for (let j = i + 1; j < arr.length; j++) {
+
+                if (arr[i] === arr[j]) {
+                    arr.splice(j, 1);
+                    console.log(arr);
+                    j--;
+                    return arr;
+                }
+            }
+        }
+    }*/
+</script>
+</body>
+</html>

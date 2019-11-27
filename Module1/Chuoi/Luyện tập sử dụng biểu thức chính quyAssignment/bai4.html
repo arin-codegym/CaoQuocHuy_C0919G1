@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ma = prompt("nhap ma so bao mat");
+    function mabaomat(ma) {
+        let pat = /^[0-9]{4}$/;
+        if (pat.test(ma)){
+            alert("ok");
+        } else {
+            while (!pat.test(ma)) {
+                alert("ma bao mat co 4 so!!!");
+                ma = prompt("nhap lai");
+
+            }
+            alert("ok");
+        }
+
+    }
+    mabaomat(ma);
+</script>
+</body>
+</html>

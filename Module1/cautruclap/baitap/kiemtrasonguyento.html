@@ -1,0 +1,65 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> So nguyen to</title>
+</head>
+
+<script>
+    // function checkSNT(val) {
+    //     for (let i = 2; i <= Math.sqrt(val); i++) {
+    //         if (val % i === 0) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    // let number = 500;
+    // let dem = 0;
+    // let i = 2;
+    // while (true) {
+    //     if (i == 2) {
+    //         dem++;
+    //         document.write(i + "<br>");
+    //         i++;
+    //         continue;
+    //     }
+    //     if (checkSNT(i)) {
+    //         dem++;
+    //     }
+    //     if (dem === number) {
+    //         break;
+    //     }
+    //     document.write(i + "<br>");
+    //     i = i + 2;
+    // }
+    let numbers = parseInt(prompt("Enter a number:"));
+    let count = 0;
+    let n = 2;
+    while(count < numbers){
+        let flag = 0;
+        for(let i=1; i <= n-1; i++ ) {
+            if (n % i == 0) {
+                flag++;
+            }
+        }
+        if (flag == 1) {
+            document.write(n + " ");
+            count++;
+        }
+        n++;
+    }
+/*#include <iostream>
+using namespace std;
+
+bool KTSNT(int x)
+{
+	if(x<2)
+		return false;
+	for(int i=2; i<=x/2; i++)
+		if(x%i==0)
+			return false;
+	return true;*/
+</script>
+</html>

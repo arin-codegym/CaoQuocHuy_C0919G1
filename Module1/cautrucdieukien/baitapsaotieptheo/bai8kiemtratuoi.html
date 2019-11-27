@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tuoi = prompt("nhaptuoi:");
+    let check = checktuoi(tuoi);
+    if (check) {
+        alert("tuoi nguoi")
+    } else {
+        alert("khong phai tuoi nguoi")
+    }
+
+    function checktuoi(n) {
+        if (n % 1 === 0){
+            if (n > 0 && n < 120) {
+                return true;
+            } else {
+                return false
+            }}
+            else {
+            return false;
+        }
+    }
+
+
+</script>
+</body>
+</html>
