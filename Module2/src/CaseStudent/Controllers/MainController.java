@@ -1,10 +1,12 @@
 package CaseStudent.Controllers;
 
+import CaseStudent.Commons.Validation;
 import CaseStudent.Commons.WriteAndReadyFileCSV;
 import CaseStudent.Model.House;
 import CaseStudent.Model.Room;
 import CaseStudent.Model.Services;
 import CaseStudent.Model.Villa;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
@@ -71,19 +73,51 @@ public class MainController {
     }
 
     private static Services addNewService(Services services) {
+        String content = "";
+        String errorMessage = "";
+
         services.setId(UUID.randomUUID().toString().replace("-", ""));
         sc.nextLine();
         System.out.println("Enter name services:");
         services.setName(sc.nextLine());
-        System.out.println("Enter area used :");
-        services.setArea_used(sc.nextDouble());
-        System.out.println("Enter rental costs:");
-        services.setRental_costs(sc.nextDouble());
-        System.out.println("Enter maximum_number_of_people:");
-        services.setMaximum_number_of_people(sc.nextInt());
-        sc.nextLine();
+        while (!Validation.checkNameServices(services.getName())) {
+            System.out.println("Name service is invalid!!! Please try again.");
+            System.out.println("Enter name service :");
+            services.setName(sc.nextLine());
+        }
+        //enter area used
+        content = "Enter area used: ";
+        errorMessage = " Area used is invalid (Area >30 , Area must be a double. ) Please try again";
+        services.setArea_used(Validation.checkValidNumberDouble(content, errorMessage));
+        while (services.getArea_used() <= 30) {
+            System.out.println(errorMessage);
+            services.setArea_used(Validation.checkValidNumberDouble(content, errorMessage));
+        }
+        // enter rental costs
+        content = "Enter rental costs";
+        errorMessage = "Rental costs is invalid(Costs >0 , Costs must be Double)Please try again !!!";
+        services.setRental_costs(Validation.checkValidNumberDouble(content, errorMessage));
+        while (services.getRental_costs() <= 0) {
+            System.out.println(errorMessage);
+            services.setRental_costs(Validation.checkValidNumberDouble(content, errorMessage));
+        }
+        // enter max num of people
+        content = "Enter max number of people: ";
+        errorMessage = "Max number of people is invalid(Number of people >0 and Number of People <20,Number of People must be integer)";
+        services.setMaximum_number_of_people(Validation.checkValidNumberInteger(content, errorMessage));
+        while (services.getMaximum_number_of_people() <= 0 || services.getMaximum_number_of_people() >= 20) {
+            System.out.println(errorMessage);
+            services.setMaximum_number_of_people(Validation.checkValidNumberInteger(content, errorMessage));
+        }
+
+
         System.out.println("Enter type_of_rent:");
         services.setType_of_rent(sc.nextLine());
+        while (!Validation.checkNameServices(services.getType_of_rent())) {
+            System.out.println("Type rent is invalid.Please try again!!! ");
+            System.out.println("Enter type_of_rent:");
+            services.setType_of_rent(sc.nextLine());
+        }
         return services;
     }
 
@@ -118,38 +152,73 @@ public class MainController {
     }
 
     private static void addNewVilla() {
+        String content = "";
+        String errorMessage = "";
         Services villa = new Villa();
         villa = addNewService(villa);
         System.out.println("Enter room standard :");
         ((Villa) villa).setRoom_standard(sc.nextLine());
+        while (!Validation.checkNameServices(((Villa) villa).getRoom_standard())) {
+            System.out.println("Room standard is invalid. Please try a gain!!!");
+            System.out.println("Enter room standard :");
+            ((Villa) villa).setRoom_standard(sc.nextLine());
+        }
         System.out.println("Enter description of other amenities:");
         ((Villa) villa).setDescription_of_other_amenities(sc.nextLine());
-        System.out.println("Enter number of floors");
-        ((Villa) villa).setNumber_of_floors(sc.nextInt());
-        System.out.println("Enter pool area: ");
-        ((Villa) villa).setPool_area(sc.nextDouble());
-        sc.nextLine();//pass enter
+
+        content = "Enter number of floors: ";
+        errorMessage = "Number of floors is invalid(Number of floors >0,Number of floors must be a integer).Please try again!!!";
+        ((Villa) villa).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
+        while (((Villa)villa).getNumber_of_floors()<=0){
+            System.out.println(errorMessage);
+            ((Villa) villa).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
+        }
+
+        content = "Enter Area Pool: ";
+        errorMessage = "Area pool is invalid(Area>30,Area must be a double).Please try again!!!";
+
+        ((Villa) villa).setPool_area(Validation.checkValidNumberDouble(content, errorMessage));
+        while (((Villa) villa).getPool_area() <= 30) {
+            System.out.println(errorMessage);
+            ((Villa) villa).setPool_area(Validation.checkValidNumberDouble(content, errorMessage));
+        }
+
         // write file
+        //Khắc phục isue ko lưu dc nhiều villa trong file
+        // trước khi thực thêm vào file chúng ta phải lấy ra toàn bộ danh sách các villa trong file villa ra listvilla
         ArrayList<Villa> villaArrayList = new ArrayList<Villa>();
+        // sau khi thực hiện xong thì thực hiên thêm vào sanh sách listvilla đó
         villaArrayList.add((Villa) villa);
+        // sau đó lưu listvilla vào file villa.csv
         WriteAndReadyFileCSV.writeVillaToFileCSV(villaArrayList);
         System.out.println("\nAdd Villa: " + villa.getName() + " Successfully!!!");
         backBackToMenu();
     }
 
     private static void addNewHouse() {
+        String content = "";
+        String errorMessage = "";
         Services house = new House();
         house = addNewService(house);
         //tiêu chuẩn phòng
         System.out.println("Enter room standard :");
         ((House) house).setRoom_standard(sc.nextLine());
+        while (!Validation.checkNameServices(((House) house).getRoom_standard())) {
+            System.out.println("Room standard is invalid. Please try a gain!!!");
+            System.out.println("Enter room standard :");
+            ((House) house).setRoom_standard(sc.nextLine());
+        }
         // mô tả các tiện nghi khác
         System.out.println("Enter description of other amenities:");
         ((House) house).setDescription_of_other_amenities(sc.nextLine());
         //Số tầng
-        System.out.println("Enter number of floors");
-        ((House) house).setNumber_of_floors(sc.nextInt());
-        sc.nextLine();//pass enter
+        content = "Enter number of floors: ";
+        errorMessage = "Number of floors is invalid(Number of floors >0,Number of floors must be a integer).Please try again!!!";
+        ((House) house).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
+        while (((House)house).getNumber_of_floors()<=0){
+            System.out.println(errorMessage);
+            ((House) house).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
+        }
         // write file
         ArrayList<House> houseArrayList = new ArrayList<House>();
         houseArrayList.add((House) house);

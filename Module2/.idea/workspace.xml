@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e7e27c3-4c32-4736-b046-783177b41849" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CaoQuocHuy_C0919G1/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/YeuCau7/Data/Villa.CSV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Data/Villa.CSV" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task1/Architecture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task1/House.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task1/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task1/ServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task1/Services.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task1/Villa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Commons/WriteAndReadyFileCSV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Controllers/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Model/Architecture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Model/House.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Model/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Model/ServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Model/Services.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Model/Villa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/Task2/Views/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CaseStudent/YeuCau7/lib/opencsv-5.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/Validation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/Validation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CaseStudent/Commons/Validation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Commons/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CaseStudent/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Controllers/MainController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Validation">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CaseStudent.YeuCau7.Task3.Main" />
       <module name="demo" />
@@ -174,8 +157,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Validation" />
         <item itemvalue="Application.Main (2)" />
+        <item itemvalue="Application.Validation" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ServiceTest" />
@@ -225,6 +208,8 @@
       <workItem from="1574818697802" duration="93000" />
       <workItem from="1574818845470" duration="13685000" />
       <workItem from="1574838304154" duration="9494000" />
+      <workItem from="1574866842197" duration="4270000" />
+      <workItem from="1574871546769" duration="3471000" />
     </task>
     <servers />
   </component>
