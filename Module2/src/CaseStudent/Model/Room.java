@@ -22,14 +22,14 @@ public class Room extends Services {
     public void setFree_service_included(String free_service_included) {
         this.free_service_included = free_service_included;
     }
-
     @Override
-    public String showInfor() {
+    public String showInfo() {
         return "\nName Service :"+getName()+
                 "\nArea Used :"+getArea_used()+
                 "\nRental costs  :"+getRental_costs()+
                 "\nMaxinum number of the people :"+getMaximum_number_of_people()+
                 "\nType of rent :"+getType_of_rent()+
                 "Free service included : "+  this.free_service_included;
-    }
+
+}
 }

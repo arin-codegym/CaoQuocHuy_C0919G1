@@ -24,8 +24,8 @@ public class Villa extends Architecture {
     }
 
     @Override
-    public String showInfor() {
-        return super.showInfor()+
+    public String showInfo() {
+        return super.showInfo()+
                 "\nPool Area :"+this.pool_area;
     }
 }

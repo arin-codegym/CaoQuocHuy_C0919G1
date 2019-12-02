@@ -71,7 +71,7 @@ public abstract class Services {
     }
 
 
-    public abstract   String showInfor() ;
+    public abstract   String showInfo() ;
 
     }
 

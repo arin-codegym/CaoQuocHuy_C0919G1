@@ -41,15 +41,15 @@ public class Architecture extends Services {
     }
 
     @Override
-    public String showInfor() {
+    public String showInfo() {
         return "\nID :" + getId() +
                 "\nName Service :" + getName() +
                 "\nArea Used :" + getArea_used() +
                 "\nRental costs  :" + getRental_costs() +
-                "\nMaxinum number of the people :" + getMaximum_number_of_people() +
+                "\nMaximum number of the people :" + getMaximum_number_of_people() +
                 "\nType of rent :" + getType_of_rent() +
                 "\nRoom standard :" + this.room_standard +
-                "\nDescription of ohter amenities:" + this.description_of_other_amenities +
+                "\nDescription of other amenities:" + this.description_of_other_amenities +
                 "\nNumber of floors :" + this.number_of_floors
                 ;
     }

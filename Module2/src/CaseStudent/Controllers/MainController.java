@@ -2,9 +2,8 @@ package CaseStudent.Controllers;
 
 import CaseStudent.Commons.NameException;
 import CaseStudent.Commons.Validation;
-import CaseStudent.Commons.WriteAndReadyFileCSV;
 import CaseStudent.Model.*;
-
+import CaseStudent.Commons.WriteAndReadyFileCSV;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
@@ -250,7 +249,7 @@ public class MainController {
         System.out.println(villaArrayList.size());
         for (Villa villa : villaArrayList) {
             System.out.println("\n____________________");
-            System.out.println(villa.showInfor());
+            System.out.println(villa.showInfo());
             System.out.println("\n____________________");
         }
     }
@@ -260,7 +259,7 @@ public class MainController {
         // System.out.println(h.size());
         for (House house : houseArrayList) {
             System.out.println("\n____________________");
-            System.out.println(house.showInfor());
+            System.out.println(house.showInfo());
             System.out.println("\n____________________");
         }
     }
@@ -270,17 +269,19 @@ public class MainController {
         // System.out.println(h.size());
         for (Room room : roomArrayList) {
             System.out.println("\n____________________");
-            System.out.println(room.showInfor());
+            System.out.println(room.showInfo());
             System.out.println("\n____________________");
         }
     }
-
     private static void addNewCustomer() {
         Customer customer = new Customer();
-        NameException.validateNameCustomer();
-
-
-
+        try{
+            NameException.validateNameCustomer();
+        }
+        catch (NameException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 
 

@@ -2,7 +2,7 @@ package CaseStudent.Commons;
 
 import java.util.Scanner;
 
-public class Validation {
+public class  Validation {
     private static Scanner sc;// Scanner sc = new Scanner khong dc khai báo ngoài vòng lặp vì mỗi lần vòng lặp chay sẽ cấp phát bộ nhớ lại dẫn đến lỗi rơi vào vong lặp vô hạn
     //check Name valid
     private static String regex = "^([\\p{Lu}]|([\\p{Lu}][\\p{Ll}]{1,}))([\\s]([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,6}$";

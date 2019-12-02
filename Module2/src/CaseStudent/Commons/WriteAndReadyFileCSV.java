@@ -1,7 +1,8 @@
 package CaseStudent.Commons;
-
-import CaseStudent.Model.House;
+import CaseStudent.Commons.WriteAndReadyFileCSV;
 import CaseStudent.Model.Room;
+import CaseStudent.Model.House;
+
 import CaseStudent.Model.Villa;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.ColumnPositionMappingStrategy;

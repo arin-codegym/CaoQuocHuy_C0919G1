@@ -26,7 +26,7 @@ public class ServiceTest
         ((Villa)villa).setPool_area(sc.nextDouble());
         System.out.println("Enter Description of other amenities:");
         ((Villa)villa).setDescription_of_other_amenities(sc.nextLine());
-        System.out.println(villa.showInfor());
+        System.out.println(villa.showInfo());
 
 
 

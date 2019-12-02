@@ -12,8 +12,7 @@ public class House extends Architecture {
     }
 
     @Override
-    public String showInfor() {
-        return super.showInfor();
-
+    public String showInfo() {
+        return super.showInfo();
     }
 }
