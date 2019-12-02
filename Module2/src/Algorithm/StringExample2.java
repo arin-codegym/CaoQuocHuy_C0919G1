@@ -49,6 +49,7 @@ public class StringExample2 {
                     && input.charAt(i) != BREAK_LINE) {
                 // build một từ
                 sb.append(input.charAt(i));
+              //  System.out.println(sb);
             } else {
                 // thêm từ vào wordMap
                 addWord(wordMap, sb);

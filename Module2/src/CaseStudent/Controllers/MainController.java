@@ -1,23 +1,24 @@
 package CaseStudent.Controllers;
 
+import CaseStudent.Commons.NameException;
 import CaseStudent.Commons.Validation;
 import CaseStudent.Commons.WriteAndReadyFileCSV;
-import CaseStudent.Model.House;
-import CaseStudent.Model.Room;
-import CaseStudent.Model.Services;
-import CaseStudent.Model.Villa;
+import CaseStudent.Model.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class MainController {
+    public static String REGEX = "^([\\p{Lu}]|([\\p{Lu}][\\p{Ll}]{1,}))([\\s]([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,6}$";
     private static Scanner sc = new Scanner(System.in);
 
     public static void disPlayMainMenu() {
-        System.out.println("\n1.Add new services." +
+        System.out.println("\n1.Add New Services." +
                 "\n2.Show Services." +
-                "\n3.Exit." +
+                "\n3.Add New Customer" +
+                "\n4.Show Information Customer" +
+                "\n5.Exit" +
                 "\nPlease choose:");
         switch (sc.nextInt()) {
             case 1:
@@ -27,8 +28,12 @@ public class MainController {
                 showServices();
                 break;
             case 3:
+                addNewCustomer();
+                break;
+            case 4:
+                // showInformationCustomer();
+            case 5:
                 System.exit(0);
-
             default:
                 System.out.println("\nError!!!");
                 backBackToMenu();
@@ -80,7 +85,7 @@ public class MainController {
         sc.nextLine();
         System.out.println("Enter name services:");
         services.setName(sc.nextLine());
-        while (!Validation.checkNameServices(services.getName())) {
+        while (!Validation.checkName(services.getName())) {
             System.out.println("Name service is invalid!!! Please try again.");
             System.out.println("Enter name service :");
             services.setName(sc.nextLine());
@@ -109,11 +114,9 @@ public class MainController {
             System.out.println(errorMessage);
             services.setMaximum_number_of_people(Validation.checkValidNumberInteger(content, errorMessage));
         }
-
-
         System.out.println("Enter type_of_rent:");
         services.setType_of_rent(sc.nextLine());
-        while (!Validation.checkNameServices(services.getType_of_rent())) {
+        while (!Validation.checkName(services.getType_of_rent())) {
             System.out.println("Type rent is invalid.Please try again!!! ");
             System.out.println("Enter type_of_rent:");
             services.setType_of_rent(sc.nextLine());
@@ -158,7 +161,7 @@ public class MainController {
         villa = addNewService(villa);
         System.out.println("Enter room standard :");
         ((Villa) villa).setRoom_standard(sc.nextLine());
-        while (!Validation.checkNameServices(((Villa) villa).getRoom_standard())) {
+        while (!Validation.checkName(((Villa) villa).getRoom_standard())) {
             System.out.println("Room standard is invalid. Please try a gain!!!");
             System.out.println("Enter room standard :");
             ((Villa) villa).setRoom_standard(sc.nextLine());
@@ -168,10 +171,10 @@ public class MainController {
 
         content = "Enter number of floors: ";
         errorMessage = "Number of floors is invalid(Number of floors >0,Number of floors must be a integer).Please try again!!!";
-        ((Villa) villa).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
-        while (((Villa)villa).getNumber_of_floors()<=0){
+        ((Villa) villa).setNumber_of_floors(Validation.checkValidNumberInteger(content, errorMessage));
+        while (((Villa) villa).getNumber_of_floors() <= 0) {
             System.out.println(errorMessage);
-            ((Villa) villa).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
+            ((Villa) villa).setNumber_of_floors(Validation.checkValidNumberInteger(content, errorMessage));
         }
 
         content = "Enter Area Pool: ";
@@ -203,7 +206,7 @@ public class MainController {
         //tiêu chuẩn phòng
         System.out.println("Enter room standard :");
         ((House) house).setRoom_standard(sc.nextLine());
-        while (!Validation.checkNameServices(((House) house).getRoom_standard())) {
+        while (!Validation.checkName(((House) house).getRoom_standard())) {
             System.out.println("Room standard is invalid. Please try a gain!!!");
             System.out.println("Enter room standard :");
             ((House) house).setRoom_standard(sc.nextLine());
@@ -214,10 +217,10 @@ public class MainController {
         //Số tầng
         content = "Enter number of floors: ";
         errorMessage = "Number of floors is invalid(Number of floors >0,Number of floors must be a integer).Please try again!!!";
-        ((House) house).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
-        while (((House)house).getNumber_of_floors()<=0){
+        ((House) house).setNumber_of_floors(Validation.checkValidNumberInteger(content, errorMessage));
+        while (((House) house).getNumber_of_floors() <= 0) {
             System.out.println(errorMessage);
-            ((House) house).setNumber_of_floors(Validation.checkValidNumberInteger(content,errorMessage));
+            ((House) house).setNumber_of_floors(Validation.checkValidNumberInteger(content, errorMessage));
         }
         // write file
         ArrayList<House> houseArrayList = new ArrayList<House>();
@@ -271,4 +274,21 @@ public class MainController {
             System.out.println("\n____________________");
         }
     }
+
+    private static void addNewCustomer() {
+        Customer customer = new Customer();
+        NameException.validateNameCustomer();
+
+
+
+    }
+
+
 }
+
+
+//    private static void showInformationCustomer() {
+//
+//    }
+
+

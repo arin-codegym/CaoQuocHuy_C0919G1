@@ -3,7 +3,7 @@ package Algorithm;
 public class StringPalindromeTest {
     public static void main(String[] args) {
         System.out.println(checkPalindrome("abcba"));
-        System.out.println(checkPalindrome("XYyx"));
+        System.out.println(checkPalindrome("XYyX"));
         System.out.println(checkPalindrome("871232178"));
         System.out.println(checkPalindrome("CCCCC"));
     }
