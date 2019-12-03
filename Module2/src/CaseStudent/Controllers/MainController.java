@@ -1,9 +1,11 @@
 package CaseStudent.Controllers;
 
+import CaseStudent.Commons.BirthdayException;
 import CaseStudent.Commons.NameException;
 import CaseStudent.Commons.Validation;
 import CaseStudent.Model.*;
 import CaseStudent.Commons.WriteAndReadyFileCSV;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.UUID;
@@ -273,19 +275,29 @@ public class MainController {
             System.out.println("\n____________________");
         }
     }
+
     private static void addNewCustomer() {
         Customer customer = new Customer();
-        try{
+        //Id
+        customer.setName_customer(UUID.randomUUID().toString().replace("-", ""));
+        //add nameCUs
+        try {
             NameException.validateNameCustomer();
-        }
-        catch (NameException ex)
-        {
+        } catch (NameException ex) {
             System.out.println(ex.getMessage());
         }
+        //add ngay sinh
+
+            try {
+                BirthdayException.checkBirthday("Enter birthday Customer:", "Email invalid!!!Please try again.");
+            } catch (BirthdayException ex) {
+                System.out.println(ex.getMessage());
+            }
+
+        }
+
+
     }
-
-
-}
 
 
 //    private static void showInformationCustomer() {
