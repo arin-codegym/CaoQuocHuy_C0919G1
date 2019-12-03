@@ -9,18 +9,18 @@ public class BirthdayException extends Exception {
         super(errMes);
     }
 
-    private static boolean checkBirthday(String str) {
+    public static boolean getBirthday( String str) {
         return str.matches(REGEX);
     }
 
-    public static void checkBirthday(String strDisplay, String errMes) throws BirthdayException {
+    public static String checkBirthday(String strDisplay, String errMes) throws BirthdayException {
         Scanner sc = new Scanner(System.in);
         System.out.println(strDisplay);
         String input = sc.nextLine();
-        while (!input.matches(REGEX))
-        if (!input.matches(REGEX)){
+        if (!getBirthday(input)){
             throw new BirthdayException(errMes);
         }
+        return input;
     }
 }
 

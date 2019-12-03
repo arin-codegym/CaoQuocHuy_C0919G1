@@ -10,7 +10,7 @@ public class NameException extends Exception {
         super(mes);
     }
 
-    public static void validateNameCustomer()throws NameException{
+    public static String validateNameCustomer() {
         while (true) {
             try {
                 Scanner sc = new Scanner(System.in);
@@ -20,8 +20,9 @@ public class NameException extends Exception {
                 if (!name.matches(REGEX)) {
                     throw new NameException("Name invalid, please try again");
                 }
-                return;
-            } catch (NameException ex) {
+                return name;
+            }
+            catch (NameException ex) {
                 System.out.println(ex.getMessage());
             }
         }

@@ -279,25 +279,26 @@ public class MainController {
     private static void addNewCustomer() {
         Customer customer = new Customer();
         //Id
-        customer.setName_customer(UUID.randomUUID().toString().replace("-", ""));
+
+        customer.setId(UUID.randomUUID().toString().replace("-", ""));
         //add nameCUs
-        try {
-            NameException.validateNameCustomer();
-        } catch (NameException ex) {
-            System.out.println(ex.getMessage());
-        }
+        customer.setName_customer(NameException.validateNameCustomer());
+
+
         //add ngay sinh
 
+
+        while (true)
             try {
-                BirthdayException.checkBirthday("Enter birthday Customer:", "Email invalid!!!Please try again.");
+                customer.setBirthday(BirthdayException.checkBirthday("Enter birthday","EMail invalid!!!Please try again."));
+                break;
             } catch (BirthdayException ex) {
                 System.out.println(ex.getMessage());
             }
-
-        }
-
-
     }
+
+
+}
 
 
 //    private static void showInformationCustomer() {
