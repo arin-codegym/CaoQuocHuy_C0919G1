@@ -3,7 +3,7 @@ package CaseStudent.Commons;
 import java.util.Scanner;
 
 public class NameException extends Exception {
-    private static final String REGEX = "^([\\p{Lu}]|([\\p{Lu}][\\p{Ll}]{1,}))([\\s]([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,6}$";
+    private static final String REGEX = "^([\\p{Lu}]|([\\p{Lu}][\\p{Ll}]+))([\\s]([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,6}$";
     ;
 
     private NameException(String mes) {

@@ -283,21 +283,20 @@ public class MainController {
         customer.setId(UUID.randomUUID().toString().replace("-", ""));
         //add nameCUs
         customer.setName_customer(NameException.validateNameCustomer());
-
-
-        //add ngay sinh
-
-
-        while (true)
+        //add ngay sinh thuc nghiem dung catch bat throws
+        while (true) {
             try {
-                customer.setBirthday(BirthdayException.checkBirthday("Enter birthday","EMail invalid!!!Please try again."));
+                customer.setBirthday(BirthdayException.validBirthday("Enter birthday", "EMail invalid!!!Please try again."));
                 break;
-            } catch (BirthdayException ex) {
-                System.out.println(ex.getMessage());
+            } catch (BirthdayException e) {
+                System.out.println(e.getMessage());
             }
+        }
+        /// add gender
+
+
+
     }
-
-
 }
 
 
