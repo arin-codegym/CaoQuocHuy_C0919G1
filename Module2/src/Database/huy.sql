@@ -146,14 +146,17 @@ insert into HopDong values(2,'2019:11:15','2019:11:25',200000,50000000,2,2,2);
 insert into HopDong values(3,'2019:11:15','2019:11:25',300000,30000000,1,1,3);
 insert into HopDong values(4,'2019:01:01','2019:11:25',300000,10000000,5,1,4);
 insert into HopDong values(5,'2019:02:02','2019:11:25',300000,10000000,1,2,5);
-insert into HopDong values(6,'2015:09:02','2019:11:25',300000,10000000,4,1,5);
+insert into HopDong values(6,'2019:09:02','2019:11:25',300000,10000000,4,1,5);
 insert into HopDong values(7,'2018:09:02','2019:11:25',300000,10000000,2,5,4);
 insert into HopDong values(8,'2018:09:02','2019:11:25',300000,10000000,1,3,3);
 insert into HopDong values(9,'2018:09:02','2019:11:25',300000,10000000,3,3,2);
 insert into HopDong values(10,'2018:09:02','2019:11:25',300000,10000000,3,2,1);
 insert into HopDong values(11,'2017:09:02','2019:11:25',300000,10000000,3,5,1);
 insert into HopDong values(12,'2017:09:02','2019:11:25',300000,10000000,3,5,1);
-insert into HopDong values(13,'2019:01:02','2019:11:25',300000,12000000,3,5,1);
+insert into HopDong values(13,'2019:11:05','2019:11:25',300000,10000000,3,4,1);
+insert into HopDong values(14,'2019:11:05','2019:11:25',300000,10000000,2,4,2);
+insert into HopDong values(15,'2019:11:05','2019:11:25',300000,10000000,4,5,4);
+insert into HopDong values(16,'2019:07:05','2019:11:25',300000,10000000,4,5,4);
 
 
 insert into HopDongChiTiet values(1,1,1);
@@ -165,6 +168,15 @@ insert into HopDongChiTiet values(2,3,20);
 insert into HopDongChiTiet values(3,1,5);
 insert into HopDongChiTiet values(4,1,5);
 insert into HopDongChiTiet values(5,1,5);
+insert into HopDongChiTiet values(5,2,5);
+insert into HopDongChiTiet values(9,2,5);
+insert into HopDongChiTiet values(10,3,5);
+insert into HopDongChiTiet values(13,1,1);
+insert into HopDongChiTiet values(13,2,3);
+insert into HopDongChiTiet values(14,2,2);
+insert into HopDongChiTiet values(14,3,4);
+insert into HopDongChiTiet values(15,3,3);
+insert into HopDongChiTiet values(9,4,3);
 select * from ViTri;
 select * from TrinhDo;
 select * from BoPhan;
@@ -290,7 +302,38 @@ where loaikhach.tenloaikhach = 'Diamond' and khachhang.diachi in('Vinh','Quãng 
 
 -- task 12
 
+select hopdong.IDHopDong, nhanvien.hoten, khachhang.hoten, khachhang.SDT, dichvu.TenDichVu,hopdong.ngaylamhopdong,
+count(hopdongchitiet.idhopdong)
+from hopdong
+inner join nhanvien on nhanvien.idnhanvien = hopdong.idnhanvien
+inner join khachhang on khachhang.idkhachhang = hopdong.idkhachhang
+inner join dichvu on dichvu.iddichvu = hopdong.iddichvu
+inner join hopdongchitiet on hopdongchitiet.idhopdong = hopdong.idhopdong
+where 
+exists (select hopdong.IDHopDong from hopdong where hopdong.iddichvu=dichvu.iddichvu and hopdong.ngaylamhopdong between '2019-10-01' and '2019-12-31')
+and not exists (select hopdong.IDHopDong from hopdong where hopdong.iddichvu=dichvu.iddichvu and hopdong.ngaylamhopdong between '2019-01-01' and '2019-06-30');
 
+
+-- cach cua tuan
+select temp.IDDichVu, temp.TenDichVu, hopdong.IDHopDong, hopdong.NgayLamHopDong,
+nhanvien.HoTen as Nhan_Vien, khachhang.HoTen as Khach_hang, khachhang.SDT,
+hopdong.TienDatCoc,count(idDichVuDiKem) as SoLuongDichVuDikem
+from (select dichvu.IDDichVu,dichvu.TenDichVu,hopdong.IDHopDong,NgayLamHopDong from dichvu
+inner join hopdong
+on hopdong.IDDichVu=dichvu.IDDichVu
+where dichvu.IDDichVu not in (select IDDichVu from hopdong
+								where quarter(NgayLamHopDong) in(1,2) and year(ngaylamhopdong)=2019
+								group by IDDichVu)
+and year(NgayLamHopDong)=2019 and quarter(NgayLamHopDong)=4) as temp
+inner join hopdong
+on temp.idhopdong=hopdong.idhopdong
+inner join khachhang
+on hopdong.IDKhachHang=khachhang.IDKhachHang
+inner join nhanvien
+on hopdong.IDNhanVien=nhanvien.IDNhanVien
+left join hopdongchitiet
+on hopdongchitiet.IDHopDong=temp.IDHopDong
+group by temp.idhopdong;
 
 
 
