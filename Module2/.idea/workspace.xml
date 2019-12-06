@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2e7e27c3-4c32-4736-b046-783177b41849" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/BirthdayException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/BirthdayException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/NameException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/NameException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CaseStudent/Commons/BirthdayException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Commons/BirthdayException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CaseStudent/Commons/NameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Commons/NameException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CaseStudent/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Controllers/MainController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -217,6 +221,8 @@
       <workItem from="1575304810230" duration="1883000" />
       <workItem from="1575337623221" duration="811000" />
       <workItem from="1575345320784" duration="3732000" />
+      <workItem from="1575355433295" duration="726000" />
+      <workItem from="1575424221698" duration="2462000" />
     </task>
     <servers />
   </component>

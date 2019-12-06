@@ -13,13 +13,19 @@ public class BirthdayException extends Exception {
         return str.matches(REGEX);
     }
 
-    public static void checkBirthday(String strDisplay, String errMes) throws BirthdayException {
+    public static String validBirthDay(String strDisplay, String errMes) throws BirthdayException {
         Scanner sc = new Scanner(System.in);
         System.out.println(strDisplay);
-        String input = sc.nextLine();
-        while (!input.matches(REGEX))
-        if (!input.matches(REGEX)){
-            throw new BirthdayException(errMes);
+        while (true){
+            try{
+                String birthDay = sc.nextLine();
+                if (!birthDay.matches(REGEX)){
+                    throw new BirthdayException(errMes);
+                }
+                return birthDay;
+            }catch (BirthdayException ex){
+               // System.out.println(ex.getMessage());
+            }
         }
     }
 }
