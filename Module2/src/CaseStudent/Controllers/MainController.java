@@ -279,23 +279,24 @@ public class MainController {
     private static void addNewCustomer() {
         Customer customer = new Customer();
         //Id
+
         customer.setId(UUID.randomUUID().toString().replace("-", ""));
         //add nameCUs
-        try{
-        customer.setName_customer(NameException.validateNameCustomer("Enter Name Customer", "Name invalid!!!! Please try again ."));
-        }catch (NameException ex){
-            System.out.println(ex.getMessage());
+        customer.setName_customer(NameException.validateNameCustomer());
+        //add ngay sinh thuc nghiem dung catch bat throws
+        while (true) {
+            try {
+                customer.setBirthday(BirthdayException.validBirthday("Enter birthday", "EMail invalid!!!Please try again."));
+                break;
+            } catch (BirthdayException e) {
+                System.out.println(e.getMessage());
+            }
         }
-        //add ngay sinh
-        try {
-            BirthdayException.validBirthDay("Enter birthday Customer:", "Email invalid!!!Please try again.");
-        } catch (BirthdayException ex) {
-            System.out.println(ex.getMessage());
-        }
+        /// add gender
+
+
 
     }
-
-
 }
 
 

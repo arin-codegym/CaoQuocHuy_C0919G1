@@ -6,7 +6,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/BirthdayException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/BirthdayException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/NameException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Commons/NameException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/demo/CaseStudent/Model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/demo/CaseStudent/Model/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CaseStudent/Commons/BirthdayException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Commons/BirthdayException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CaseStudent/Commons/GenderException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Commons/GenderException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CaseStudent/Commons/NameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Commons/NameException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CaseStudent/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CaseStudent/Controllers/MainController.java" afterDir="false" />
     </list>
@@ -54,7 +56,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/SaveToFile/SaveToFile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15429688" />
@@ -221,8 +223,8 @@
       <workItem from="1575304810230" duration="1883000" />
       <workItem from="1575337623221" duration="811000" />
       <workItem from="1575345320784" duration="3732000" />
-      <workItem from="1575355433295" duration="726000" />
-      <workItem from="1575424221698" duration="2462000" />
+      <workItem from="1575392322518" duration="5278000" />
+      <workItem from="1575475214228" duration="4945000" />
     </task>
     <servers />
   </component>
