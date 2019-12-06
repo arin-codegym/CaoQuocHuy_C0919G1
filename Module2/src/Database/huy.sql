@@ -281,6 +281,15 @@ inner join hopdongchitiet on hopdongchitiet.idhopdong= hopdong.idhopdong group b
 
 -- task 11 
 
+select distinct dichvudikem.tendichvudikem,dichvudikem.Gia,dichvudikem.DonVi from hopdong
+inner join hopdongchitiet on hopdongchitiet.idhopdong = hopdong.idhopdong
+inner join dichvudikem on dichvudikem.iddichvudikem = dichvudikem.iddichvudikem
+inner join khachhang on khachhang.idkhachhang = hopdong.idkhachhang
+inner join loaikhach on loaikhach.idloaikhach = khachhang.idloaikhach
+where loaikhach.tenloaikhach = 'Diamond' and khachhang.diachi in('Vinh','Quãng Ngãi');
+
+-- task 12
+
 
 
 

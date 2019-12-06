@@ -9,24 +9,21 @@ public class BirthdayException extends Exception {
         super(errMes);
     }
 
-    private static boolean checkBirthday(String str) {
+    private static boolean getBirthday(String str) {
         return str.matches(REGEX);
     }
 
-    public static String validBirthDay(String strDisplay, String errMes) throws BirthdayException {
+    public static String validBirthday(String strDisplay, String errMes) throws BirthdayException {
         Scanner sc = new Scanner(System.in);
         System.out.println(strDisplay);
-        while (true){
-            try{
-                String birthDay = sc.nextLine();
-                if (!birthDay.matches(REGEX)){
-                    throw new BirthdayException(errMes);
-                }
-                return birthDay;
-            }catch (BirthdayException ex){
-               // System.out.println(ex.getMessage());
+        boolean hasErr = false;
+        String input = sc.nextLine();
+            if (getBirthday(input)) {
+                return input;
+            } else {
+                throw new BirthdayException(errMes);
             }
         }
-    }
+
 }
 
