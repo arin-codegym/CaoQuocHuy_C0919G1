@@ -1,14 +1,9 @@
 package CaseStudent.Controllers;
 
-import CaseStudent.Commons.BirthdayException;
-import CaseStudent.Commons.NameException;
-import CaseStudent.Commons.Validation;
+import CaseStudent.Commons.*;
 import CaseStudent.Model.*;
-import CaseStudent.Commons.WriteAndReadyFileCSV;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 public class MainController {
     public static String REGEX = "^([\\p{Lu}]|([\\p{Lu}][\\p{Ll}]{1,}))([\\s]([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,6}$";
@@ -32,7 +27,7 @@ public class MainController {
                 addNewCustomer();
                 break;
             case 4:
-                // showInformationCustomer();
+                showInformationCustomer();
             case 5:
                 System.exit(0);
             default:
@@ -70,6 +65,12 @@ public class MainController {
                 disPlayMainMenu();
                 break;
             case 5:
+                addNewBookingResort();
+                break;
+            case 6:
+                showInformationEmployees();
+                break;
+            case 7:
                 System.exit(0);
                 break;
             default:
@@ -77,7 +78,7 @@ public class MainController {
                 backBackToMenu();
         }
     }
-
+// add service
     private static Services addNewService(Services services) {
         String content = "";
         String errorMessage = "";
@@ -124,7 +125,7 @@ public class MainController {
         }
         return services;
     }
-
+// show service
     private static void showServices() {
         System.out.println("__________" +
                 "\n1. Show All Villa" +
@@ -154,7 +155,7 @@ public class MainController {
                 backBackToMenu();
         }
     }
-
+// add new villa
     private static void addNewVilla() {
         String content = "";
         String errorMessage = "";
@@ -186,7 +187,6 @@ public class MainController {
             System.out.println(errorMessage);
             ((Villa) villa).setPool_area(Validation.checkValidNumberDouble(content, errorMessage));
         }
-
         // write file
         //Khắc phục isue ko lưu dc nhiều villa trong file
         // trước khi thực thêm vào file chúng ta phải lấy ra toàn bộ danh sách các villa trong file villa ra listvilla
@@ -198,7 +198,7 @@ public class MainController {
         System.out.println("\nAdd Villa: " + villa.getName() + " Successfully!!!");
         backBackToMenu();
     }
-
+// add house
     private static void addNewHouse() {
         String content = "";
         String errorMessage = "";
@@ -230,7 +230,7 @@ public class MainController {
         System.out.println("\nAdd House: " + house.getName() + " Successfully!!!");
         backBackToMenu();
     }
-
+// add room
     private static void addNewRoom() {
         Services room = new Room();
         room = addNewService(room);
@@ -245,7 +245,7 @@ public class MainController {
         System.out.println("\nAdd Villa: " + room.getName() + " Successfully!!!");
         backBackToMenu();
     }
-
+// show villa
     private static void showAllVilla() {
         ArrayList<Villa> villaArrayList = WriteAndReadyFileCSV.getVillaFromCSV();
         System.out.println(villaArrayList.size());
@@ -255,7 +255,7 @@ public class MainController {
             System.out.println("\n____________________");
         }
     }
-
+// show house
     private static void showAllHouse() {
         ArrayList<House> houseArrayList = WriteAndReadyFileCSV.getHouseFromCSV();
         // System.out.println(h.size());
@@ -265,7 +265,7 @@ public class MainController {
             System.out.println("\n____________________");
         }
     }
-
+// show room
     private static void showAllRoom() {
         ArrayList<Room> roomArrayList = WriteAndReadyFileCSV.getRoomFromCSV();
         // System.out.println(h.size());
@@ -275,15 +275,14 @@ public class MainController {
             System.out.println("\n____________________");
         }
     }
-
+// add customer -----------------------------------------------------------------------------------------------------------
     private static void addNewCustomer() {
         Customer customer = new Customer();
-        //Id
-
+        //Id random
         customer.setId(UUID.randomUUID().toString().replace("-", ""));
-        //add nameCUs
-        customer.setName_customer(NameException.validateNameCustomer());
-        //add ngay sinh thuc nghiem dung catch bat throws
+        //add nameCUs exception no throws
+//        customer.setName_customer(NameException.validateNameCustomer());
+//        //add ngay sinh thuc nghiem dung catch bat throws
         while (true) {
             try {
                 customer.setBirthday(BirthdayException.validBirthday("Enter birthday", "EMail invalid!!!Please try again."));
@@ -292,16 +291,154 @@ public class MainController {
                 System.out.println(e.getMessage());
             }
         }
-        /// add gender
+//        /// add gender
+        while (true) {
+            try {
+                customer.setGender(GenderException.validGender("enter gender :", "Error try again."));
+                break;
+            } catch (GenderException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        // add ID
+        customer.setId_card(Validation.checkValidNumberInteger("Enter Id Card Customer: ", "ID invalid"));
+        while (customer.getId_card() < 100000000 || customer.getId_card() >= 1000000000) {
+            System.out.println("Id Card Is Invalid. Id Card Mus Be Integer (100.000.000 - 999.999.999) !!!");
+            customer.setId_card(Validation.checkValidNumberInteger("Enter Id Card Customer: ", "ID invalid"));
+        }
+        // add Email
+        customer.setEmail(EmailException.validDateEmail());
+        // add phone
+        customer.setPhone_number(Validation.checkValidNumberInteger("Enter phone-number :", "Phone-number invalid."));
+        // add type
+        customer.setGuest_type(Validation.NameException("Enter Type Customer: ", "Customer Type is invalid, please try again!"));
+        //add address
 
+//-----------------------------------------------------------------//
 
+        //Write File Customer.CSV
+        System.out.println("Enter address : ");
+        customer.setAddress(sc.nextLine());
+        ArrayList<Customer> customers = WriteAndReadyFileCSV.getCustomerFromCSV();
+        customers.add(customer);
+        WriteAndReadyFileCSV.writeCustomerToFileCsv(customers);
+        System.out.println("\nAdd Customer: " + customer.getName_customer() + " Successfully !!!");
+        ScannerUtils.scanner.nextLine();
+        backBackToMenu();
 
     }
+    //Show Information Customer
+    private static void showInformationCustomer() {
+        ArrayList<Customer> listCustomers = WriteAndReadyFileCSV.getCustomerFromCSV();
+        //Sap xep alpha B theo ten
+        listCustomers.sort(new SoftName());
+        for (Customer customer : listCustomers) {
+            System.out.println("\n---------------------------------------------");
+            System.out.println(customer.showInfo());
+            System.out.println("\n---------------------------------------------");
+        }
+    }
+
+    // add booking
+
+    private static void addNewBookingResort() {
+        ArrayList<Customer> listCustomers = WriteAndReadyFileCSV.getCustomerFromCSV();
+        //Sap xep alpha B theo ten
+        listCustomers.sort(new SoftName());
+        int i = 1;
+        for (Customer customer : listCustomers) {
+            System.out.println("\n---------------------------------------------");
+            System.out.println("No: " + i);
+            System.out.println(customer.showInfo());
+            System.out.println("\n---------------------------------------------");
+            i++;
+        }
+        System.out.println("Choose Customer Booking");
+        Customer customer = new Customer();
+        customer = listCustomers.get(ScannerUtils.scanner.nextInt() - 1);
+        System.out.println("\n1.Booking Villa." +
+                "\n2.Booking House." +
+                "\n3.Booking Room.");
+        System.out.println("Choose Services Booking");
+        int choose = ScannerUtils.scanner.nextInt();
+        switch (choose) {
+            case 1:
+                i = 1;
+                ArrayList<Villa> listVillas = WriteAndReadyFileCSV.getVillaFromCSV();
+                for (Villa villa : listVillas) {
+                    System.out.println("\n---------------------------------------------");
+                    System.out.println("No: " + i);
+                    System.out.println(villa.showInfo());
+                    System.out.println("\n---------------------------------------------");
+                    i++;
+                }
+                System.out.println("Choose Villa Booking");
+                Villa villa = listVillas.get(ScannerUtils.scanner.nextInt() - 1);
+                customer.setServices(villa);
+                break;
+            case 2:
+                i = 1;
+                ArrayList<House> listHouses = WriteAndReadyFileCSV.getHouseFromCSV();
+                for (House house : listHouses) {
+                    System.out.println("\n---------------------------------------------");
+                    System.out.println("No: " + i);
+                    System.out.println(house.showInfo());
+                    System.out.println("\n---------------------------------------------");
+                    i++;
+                }
+                System.out.println("Choose House Booking");
+                House house = listHouses.get(ScannerUtils.scanner.nextInt() - 1);
+                customer.setServices(house);
+                break;
+            case 3:
+                i = 1;
+                ArrayList<Room> listRooms = WriteAndReadyFileCSV.getRoomFromCSV();
+                for (Room room : listRooms) {
+                    System.out.println("\n---------------------------------------------");
+                    System.out.println("No: " + i);
+                    System.out.println(room.showInfo());
+                    System.out.println("\n---------------------------------------------");
+                    i++;
+                }
+                System.out.println("Choose Room Booking");
+                Room room = listRooms.get(ScannerUtils.scanner.nextInt() - 1);
+                customer.setServices(room);
+                break;
+            default:
+                backBackToMenu();
+                break;
+        }
+        ArrayList<Customer> listBooking = WriteAndReadyFileCSV.getBookingFromCSV();
+        listBooking.add(customer);
+        WriteAndReadyFileCSV.writeBookingToFileCsv(listBooking);
+        System.out.println("\nAdd Booking for : " + customer.getName_customer() + " Successfully !!!");
+        ScannerUtils.scanner.nextLine();
+        backBackToMenu();
+    }
+
+    // show information Employee
+    private static void showInformationEmployees() {
+        Map<Integer, Employee> map = new HashMap<>();
+        map.put(100, new Employee("Nguyễn Thành Kiên", 25, "Đà Nẵng"));
+        map.put(101, new Employee("Nguyễn Văn Toàn", 22, "Quảng Nam"));
+        map.put(102, new Employee("Lê Văn Hải", 20, "Hà Nội"));
+        map.put(103, new Employee("Đoàn Phước Trung", 18, "Vũng Tàu"));
+        map.put(104, new Employee("Đoàn Ngọc Sơn", 18, "Tây Nguyên"));
+        map.put(105, new Employee("Đoàn Văn Tùng", 28, "Tây Ninh"));
+        map.put(106, new Employee("Trần Cường", 24, "Bắc Giang"));
+        map.put(107, new Employee("Trần Cường Tú", 24, "Huế"));
+        map.put(108, new Employee("Trần Văn Tài", 34, "Quảng Trị"));
+        map.put(109, new Employee("Trần Thanh", 32, "Quảng Ninh"));
+        // show
+        for (Map.Entry m : map.entrySet()) {
+            System.out.println("Key: " + m.getKey() + "\n" + m.getValue().toString());
+        }
+    }
+
+
 }
 
 
-//    private static void showInformationCustomer() {
-//
-//    }
+
 
 
