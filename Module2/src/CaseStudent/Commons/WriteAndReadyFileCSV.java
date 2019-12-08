@@ -3,6 +3,7 @@ package CaseStudent.Commons;
 import CaseStudent.Commons.WriteAndReadyFileCSV;
 import CaseStudent.Model.*;
 
+import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
@@ -13,6 +14,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class WriteAndReadyFileCSV {
     //the delimiter to use for separating entries
@@ -21,11 +24,11 @@ public class WriteAndReadyFileCSV {
     private static final char DEFAULT_QUOTE = '"';
     private static final int NUMBER_OF_LINE_SKIP = 1;
     // path file villa
-    private static final String pathVilla = "src/CaseStudent/Data/Villa.csv";
+    public static final String pathVilla = "src/CaseStudent/Data/Villa.csv";
     // path file house
-    private static final String pathHouse = "src/CaseStudent/Data/House.csv";
+    public static final String pathHouse = "src/CaseStudent/Data/House.csv";
     // path file room
-    private static final String pathRoom = "src/CaseStudent/Data/Room.csv";
+    public static final String pathRoom = "src/CaseStudent/Data/Room.csv";
     // path file customer
     private static final String pathCustomer = "src/CaseStudent/Data/Room.csv";
     // path file Booking.csv
@@ -315,5 +318,88 @@ public class WriteAndReadyFileCSV {
         }
         return (ArrayList<Customer>) csvToBean.parse();
     }
+    // them ten customer vao treeSet
+    public static Set<String> getTreeSetService(String path) {
+        Set<String> set = new TreeSet<>();
+        try (Reader reader = new FileReader(path);
+             CSVReader csvReader = new CSVReader(reader);
+        ) {
+            String[] line;
+            csvReader.skip(1);
+            while ((line = csvReader.readNext()) != null) {
+                set.add(line[1]);
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return set;
+    }
+    //doc file customer.csv roi them vao list
+    public static ArrayList<Customer> parseCustomerCSVtoBean() {
+        Path path = Paths.get(pathCustomer);
+        if (!Files.exists(path)) {
+            try {
+                Writer writer = new FileWriter(pathCustomer);
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        ColumnPositionMappingStrategy<Customer> strategy = new ColumnPositionMappingStrategy<Customer>();
+        strategy.setType(Customer.class);
+        strategy.setColumnMapping(headerRecordCustomer);
+        CsvToBean<Customer> csvToBean = null;
+        try {
+            csvToBean = new CsvToBeanBuilder<Customer>(new FileReader(pathCustomer))
+                    .withMappingStrategy(strategy)
+                    .withSeparator(DEFAULT_SEPARATOR)
+                    .withQuoteChar(DEFAULT_QUOTE)
+                    .withSkipLines(NUMBER_OF_LINE_SKIP)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .build();
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        assert csvToBean != null;
+        return (ArrayList<Customer>) csvToBean.parse();
+    }
+    public static ArrayList<Customer> ReaderBookingCSV() {
+        ArrayList<Customer> listCustomer = new ArrayList<Customer>();
+        try (Reader reader = new FileReader(pathBooking);
+             CSVReader csvReader = new CSVReader(reader);
+        ) {
+            String[] line;
+            csvReader.skip(1);
+            while ((line = csvReader.readNext()) != null) {
+                Customer customer = new Customer();
+                Villa villa = new Villa();
+                try {
+                    if (!Validation.checkName(line[0])){
+                        throw new NameException.validateNameCustomer();
+                    }    customer.setName_customer(line[0]);
+                } catch (NameException.validateNameCustomer validateNameCustomer) {
+                    validateNameCustomer.printStackTrace();
+                }
 
+                customer.setBirthday(line[1]);
+                customer.setId_card(Integer.parseInt(line[2]));
+                customer.setPhone_number(Integer.parseInt(line[3]));
+                customer.setEmail(line[4]);
+                customer.setAddress(line[5]);
+                customer.setGuest_type(line[6]);
+                customer.setGender(line[7]);
+                villa.setId(line[8]);
+                villa.setName(line[9]);
+                villa.setArea_used(Float.parseFloat(line[10]));
+                villa.setRental_costs(Float.parseFloat(line[11]));
+                villa.setMaximum_number_of_people(Integer.parseInt(line[12]));
+                villa.setType_of_rent(line[13]);
+                customer.setServices(villa);
+                listCustomer.add(customer);
+            }
+        } catch (
+                IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return listCustomer;
+    }
 }

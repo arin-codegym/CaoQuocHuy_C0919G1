@@ -25,4 +25,7 @@ public class NameException extends Exception {
             }
         }
     }
+
+    static class validateNameCustomer extends Throwable {
+    }
 }
