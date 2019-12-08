@@ -7,16 +7,16 @@ public class EmailException extends Exception {
     private EmailException(String message) {
         super(message);
     }
-    public static void validDateEmail() throws EmailException{
+    public static String validDateEmail() {
         while (true) {
             try {
                 Scanner sc = new Scanner(System.in);
-                System.out.println("Enter name Customer: ");
-                String name = sc.nextLine();
-                if (!name.matches(REGEX)) {
+                System.out.println("Enter email Customer: ");
+                String email = sc.nextLine();
+                if (!email.matches(REGEX)) {
                     throw new EmailException("Email invalid, please try again");
                 }
-                return;
+                return email;
             } catch (EmailException ex) {
                 System.out.println(ex.getMessage());
             }

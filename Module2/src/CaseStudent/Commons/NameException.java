@@ -9,14 +9,12 @@ public class NameException extends Exception {
     private NameException(String mes) {
         super(mes);
     }
-
     public static String validateNameCustomer() {
         while (true) {
             try {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Enter name Customer: ");
                 String name = sc.nextLine();
-
                 if (!name.matches(REGEX)) {
                     throw new NameException("Name invalid, please try again");
                 }

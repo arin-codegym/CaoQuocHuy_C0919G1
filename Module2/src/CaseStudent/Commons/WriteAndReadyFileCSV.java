@@ -1,9 +1,8 @@
 package CaseStudent.Commons;
-import CaseStudent.Commons.WriteAndReadyFileCSV;
-import CaseStudent.Model.Room;
-import CaseStudent.Model.House;
 
-import CaseStudent.Model.Villa;
+import CaseStudent.Commons.WriteAndReadyFileCSV;
+import CaseStudent.Model.*;
+
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
@@ -21,13 +20,28 @@ public class WriteAndReadyFileCSV {
     // the character to use for quoted elements
     private static final char DEFAULT_QUOTE = '"';
     private static final int NUMBER_OF_LINE_SKIP = 1;
+    // path file villa
     private static final String pathVilla = "src/CaseStudent/Data/Villa.csv";
+    // path file house
     private static final String pathHouse = "src/CaseStudent/Data/House.csv";
+    // path file room
     private static final String pathRoom = "src/CaseStudent/Data/Room.csv";
+    // path file customer
+    private static final String pathCustomer = "src/CaseStudent/Data/Room.csv";
+    // path file Booking.csv
+    private static final String pathBooking = "src/CaseStudent/Data//Booking.csv";
     // header Villa.csv
     private static String[] headerRecordVIlla = new String[]{"id", "name", "area_used", "rental_costs", "maximum_number_of_people", "type_of_rent", "room_standard", "description_of_other_amenities", "number_of_floors", "pool_area"};
+    // header House
     private static String[] headerRecordHouse = new String[]{"id", "name", "area_used", "rental_costs", "maximum_number_of_people", "type_of_rent", "room_standard", "description_of_other_amenities", "number_of_floors"};
+    // header Room
     private static String[] headerRecordRoom = new String[]{"id", "name", "area_used", "rental_costs", "maximum_number_of_people", "type_of_rent", "free_service_included"};
+    // header Customer
+    private static String[] headerRecordCustomer = new String[]{"name_customer", "id", "birthday", "gender", "id_card", "phone_number", "email", "guest_type", "address"};
+
+
+    private static String[] headerRecordBooking = new String[]{"idCus", "nameCus", "genderCus", "idCardCus", "phoneNumber", "emailCus", "typeCus", "addressCus","birthday",
+            "id", "nameService", "areaUsed", "rentalCosts", "maxNumberOfPeople", "typeRent"};
 
     public static void writeVillaToFileCSV(ArrayList<Villa> arrayList) {
         try (Writer writer = new FileWriter(pathVilla);
@@ -134,6 +148,7 @@ public class WriteAndReadyFileCSV {
         }
         return (ArrayList<Villa>) csvToBean.parse();
     }
+
     public static ArrayList<House> getHouseFromCSV() {
         Path path = Paths.get(pathHouse);
         if (!Files.exists(path)) {
@@ -161,6 +176,7 @@ public class WriteAndReadyFileCSV {
         }
         return (ArrayList<House>) csvToBean.parse();
     }
+
     //get room
     public static ArrayList<Room> getRoomFromCSV() {
         Path path = Paths.get(pathRoom);
@@ -187,6 +203,117 @@ public class WriteAndReadyFileCSV {
             System.out.println(e.getMessage());
         }
         return (ArrayList<Room>) csvToBean.parse();
+    }
+
+
+    //function write Customer to File CSV
+
+    public static void writeCustomerToFileCsv(ArrayList<Customer> arrayList) {
+        try (Writer writer = new FileWriter(pathCustomer);
+             CSVWriter csvWriter = new CSVWriter(writer,
+                     CSVWriter.DEFAULT_SEPARATOR,
+                     CSVWriter.NO_QUOTE_CHARACTER,
+                     CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                     CSVWriter.DEFAULT_LINE_END);) {
+
+            //add Header of File
+            csvWriter.writeNext(headerRecordCustomer);
+            for (Customer customer : arrayList) {
+                csvWriter.writeNext(new String[]
+                        // "name_customer",  "id",  "birthday",  "gender",  "id_card",  "phone_number",  "email", "guest_type",  "address"
+                        {customer.getName_customer(), customer.getId(), customer.getBirthday(), customer.getGender(), String.valueOf(customer.getId_card()),
+                                String.valueOf(customer.getPhone_number()), customer.getEmail(), customer.getGuest_type(), customer.getAddress()
+                        });
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /* get customer
+     * */
+    public static ArrayList<Customer> getCustomerFromCSV() {
+        Path path = Paths.get(pathCustomer);
+        if (!Files.exists(path)) {
+            try {
+                Writer writer = new FileWriter(pathCustomer);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        ColumnPositionMappingStrategy<Customer> strategy = new ColumnPositionMappingStrategy<>();
+        strategy.setType(Customer.class);
+        strategy.setColumnMapping(headerRecordCustomer);
+
+        CsvToBean<Customer> csvToBean = null;
+        try {
+            csvToBean = new CsvToBeanBuilder<Customer>(new FileReader(pathCustomer))
+                    .withMappingStrategy(strategy)
+                    .withSeparator(DEFAULT_SEPARATOR)
+                    .withQuoteChar(DEFAULT_QUOTE)
+                    .withSkipLines(NUMBER_OF_LINE_SKIP)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .build();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        return (ArrayList<Customer>) csvToBean.parse();
+    }
+
+
+    //write Booking to File CSV
+    public static void writeBookingToFileCsv(ArrayList<Customer> arrayList) {
+        try (Writer writer = new FileWriter(pathBooking);
+             CSVWriter csvWriter = new CSVWriter(writer,
+                     CSVWriter.DEFAULT_SEPARATOR,
+                     CSVWriter.NO_QUOTE_CHARACTER,
+                     CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                     CSVWriter.DEFAULT_LINE_END);) {
+
+            //add Header of File
+            csvWriter.writeNext(headerRecordBooking);
+            for (Customer customer : arrayList) {
+                csvWriter.writeNext(new String[]
+                        // "name_customer",  "id",  "birthday",  "gender",  "id_card",  "phone_number",  "email", "guest_type",  "address"
+                        {customer.getName_customer(), customer.getId(), customer.getBirthday(), String.valueOf(customer.getGender()),
+                               String.valueOf( customer.getId_card()),String.valueOf( customer.getPhone_number()), customer.getEmail(), customer.getGuest_type(), customer.getAddress(),
+                                customer.getServices().getId(), customer.getServices().getName(), String.valueOf(customer.getServices().getArea_used()), String.valueOf(customer.getServices().getRental_costs()),
+                                String.valueOf(customer.getServices().getMaximum_number_of_people()),
+                                customer.getServices().getType_of_rent()
+                        });
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //get list Booking from CSV
+    public static ArrayList<Customer> getBookingFromCSV() {
+        Path path = Paths.get(pathBooking);
+        if (!Files.exists(path)) {
+            try {
+                Writer writer = new FileWriter(pathBooking);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        ColumnPositionMappingStrategy<Customer> strategy = new ColumnPositionMappingStrategy<>();
+        strategy.setType(Customer.class);
+        strategy.setColumnMapping(headerRecordBooking);
+
+        CsvToBean<Customer> csvToBean = null;
+        try {
+            csvToBean = new CsvToBeanBuilder<Customer>(new FileReader(pathBooking))
+                    .withMappingStrategy(strategy)
+                    .withSeparator(DEFAULT_SEPARATOR)
+                    .withQuoteChar(DEFAULT_QUOTE)
+                    .withSkipLines(NUMBER_OF_LINE_SKIP)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .build();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        return (ArrayList<Customer>) csvToBean.parse();
     }
 
 }
