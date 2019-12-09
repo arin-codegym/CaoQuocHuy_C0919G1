@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c1cd85-aac4-4ed2-892d-f7ae02eb8ebe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HienThiThoiGIan/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HienThiThoiGIan/.idea/artifacts/HienThiThoiGIan_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HienThiThoiGIan/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HienThiThoiGIan/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HienThiThoiGIan/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HienThiThoiGIan/HienThiThoiGIan.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HienThiThoiGIan/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +18,10 @@
   <component name="ProjectId" id="1Ujxgs3lgZaEgKODWLwzMJ0CMTW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/HienThiThoiGIan" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -50,6 +46,8 @@
       <option name="presentableId" value="Default" />
       <updated>1575883919990</updated>
       <workItem from="1575883921302" duration="60000" />
+      <workItem from="1575907751854" duration="304000" />
+      <workItem from="1575912661609" duration="672000" />
     </task>
     <servers />
   </component>
@@ -61,7 +59,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
