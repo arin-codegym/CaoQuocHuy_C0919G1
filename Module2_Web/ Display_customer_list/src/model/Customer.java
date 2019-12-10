@@ -52,7 +52,7 @@ public class Customer {
         this.name = name;
         this.birthday = birthday;
         this.address = address;
-       // this.image = image;
+        this.image = image;
     }
 
     public Customer() {

@@ -21,7 +21,7 @@
 
 <%
     List<Customer> list = new ArrayList<>();
-    list.add(new Customer("Cao Quốc Huy", "11-11-1989", "Quảng Nam", ""));
+    list.add(new Customer("Cao Quốc Huy", "11-11-1989", "Quảng Nam","" ));
     list.add(new Customer("Trần Viết Dũng", "01-01-1992", "Thanh Hóa", ""));
     list.add(new Customer("Nguyễn Văn Toàn", "01-01-1989", "Đà Nẵng", ""));
 
