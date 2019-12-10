@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c1cd85-aac4-4ed2-892d-f7ae02eb8ebe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-web-simple-dictionary-jsp/java-web-simple-dictionary-jsp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +20,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/HienThiThoiGIan" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/java-web-currency-converter-jsp" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -48,6 +47,8 @@
       <workItem from="1575883921302" duration="60000" />
       <workItem from="1575907751854" duration="304000" />
       <workItem from="1575912661609" duration="672000" />
+      <workItem from="1575951346753" duration="23000" />
+      <workItem from="1575952050455" duration="2147000" />
     </task>
     <servers />
   </component>
