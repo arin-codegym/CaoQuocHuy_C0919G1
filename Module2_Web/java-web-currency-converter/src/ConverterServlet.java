@@ -11,9 +11,7 @@ public class ConverterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         float rate = Float.parseFloat(request.getParameter("rate"));
         float usd = Float.parseFloat(request.getParameter("usd"));
-
         float vnd = rate * usd;
-
         PrintWriter writer = response.getWriter();
         writer.println("<html>");
         writer.println("<h1>Rate: " + rate+ "</h1>");
