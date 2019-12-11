@@ -26,7 +26,9 @@
     </tr>
     <c:forEach items='${requestScope["customers"]}' var="customer">
         <tr>
-            <td><a href="${pageContext.request.contextPath}/huy?action=view&id=${customer.getId()}">${customer.getName()}</a></td>
+            <td>
+                <a href="${pageContext.request.contextPath}/huy?action=view&id=${customer.getId()}">${customer.getName()}</a>
+            </td>
             <td>${customer.getEmail()}</td>
             <td>${customer.getAddress()}</td>
             <td><a href="${pageContext.request.contextPath}/huy?action=edit&id=${customer.getId()}">edit</a></td>
