@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c1cd85-aac4-4ed2-892d-f7ae02eb8ebe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ Display_customer_list/out/artifacts/Display_customer_list_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ Display_customer_list/out/artifacts/Display_customer_list_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ Display_customer_list/src/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ Display_customer_list/src/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ Display_customer_list/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ Display_customer_list/web/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,12 +14,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Ujxgs3lgZaEgKODWLwzMJ0CMTW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ Display_customer_list" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ModelMVC" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,6 +50,7 @@
       <workItem from="1575912661609" duration="672000" />
       <workItem from="1575951346753" duration="23000" />
       <workItem from="1575952050455" duration="4661000" />
+      <workItem from="1576035068304" duration="1734000" />
     </task>
     <servers />
   </component>
