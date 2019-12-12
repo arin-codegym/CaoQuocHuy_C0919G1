@@ -1,10 +1,10 @@
 input[type=text] {
-    width: 300px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    padding: 12px 10px 12px 10px;
-}
+     width: 300px;
+     font-size: 16px;
+     border: 2px solid #ccc;
+     border-radius: 4px;
+     padding: 12px 10px 12px 10px;
+ }
 #submit {
     border-radius: 2px;
     padding: 10px 32px;

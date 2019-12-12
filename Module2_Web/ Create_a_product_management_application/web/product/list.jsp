@@ -14,7 +14,7 @@
 <body>
 <h1>Products</h1>
 <p>
-    <a href="/product?action=create">Create new Product</a>
+    <a href="${pageContext.request.contextPath}/product?action=create">Create new Product</a>
 </p>
 <table border="1">
     <tr>
