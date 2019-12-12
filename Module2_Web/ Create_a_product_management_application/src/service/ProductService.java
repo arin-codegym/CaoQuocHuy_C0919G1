@@ -10,5 +10,6 @@ public interface ProductService {
     void update (int id,Product product);
     void remove(int id);
     Product findByName (String name);
+    Product findById(int id);
     Product see_product_details(int id);
 }

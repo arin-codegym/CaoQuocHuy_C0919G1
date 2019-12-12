@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Product {
     private int id;
     private String name;
-    private double price;
+    private String price;
     private String description;
     private String producer;
 
@@ -25,11 +25,11 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -49,7 +49,7 @@ public class Product {
         this.producer = producer;
     }
 
-    public Product(int id, String name, double price, String description, String producer) {
+    public Product(int id, String name, String price, String description, String producer) {
         this.id = id;
         this.name = name;
         this.price = price;
