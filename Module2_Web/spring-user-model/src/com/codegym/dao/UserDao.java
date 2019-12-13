@@ -33,6 +33,13 @@ public class UserDao {
         u2.setEmail("mike@codegym.vn");
         u3.setPassword("123456");
         users.add(u3);
+        User u4 = new User();
+        u4.setAge(1000);
+        u4.setName("Huy");
+        u4.setAccount("huy");
+        u4.setEmail("huy@codegym.vn");
+        u4.setPassword("huy");
+        users.add(u4);
     }
 
     public static User checkLogin(Login login){
