@@ -25,11 +25,11 @@ public class DictionaryController {
         dic.put("computer", "Máy tính");
         String result = dic.get(search);
 
-        ModelAndView modelAndView = new ModelAndView("dictionary");
+        ModelAndView modelAndView = new ModelAndView("dictionary","search",search);
         if (result == null) {
-            modelAndView.addObject("result", "Not found.");
+            modelAndView.addObject("result", search+" Not found.");
         } else {
-            modelAndView.addObject("result", result);
+            modelAndView.addObject("result", search + " la "+result);
         }
         System.out.println("dO POSST");
         return modelAndView;

@@ -21,13 +21,14 @@
 
 <%
     List<Customer> list = new ArrayList<>();
-    list.add(new Customer("Cao Quốc Huy", "11-11-1989", "Quảng Nam","" ));
+    list.add(new Customer("Cao Quốc Huy", "11-11-1989", "Quảng Nam","https://vnn-imgs-a1.vgcloud.vn/streaming1.danviet.vn/upload/4-2019/images/2019-12-11/huy-1-1576032443-width650height433.jpg" ));
     list.add(new Customer("Trần Viết Dũng", "01-01-1992", "Thanh Hóa", ""));
     list.add(new Customer("Nguyễn Văn Toàn", "01-01-1989", "Đà Nẵng", ""));
 
 %>
 <c:forEach var="cuslist" items="<%=list%>">
     <c:out value="${cuslist.toString()}"/>
+    <img src="${cuslist.getImage()}">
   <br>
 </c:forEach>
 

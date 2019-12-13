@@ -12,7 +12,7 @@ public class Customer {
                 "name='" + name + '\'' +
                 ", birthday='" + birthday + '\'' +
                 ", address='" + address + '\'' +
-                ", image=" + image +
+
                 '}';
     }
 
