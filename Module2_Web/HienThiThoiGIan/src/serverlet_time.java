@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 
-@WebServlet(name = "serverlet_time")
+@WebServlet(name = "serverlet_time",urlPatterns = "/index.jsp")
 public class serverlet_time extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

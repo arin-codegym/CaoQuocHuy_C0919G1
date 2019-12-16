@@ -15,10 +15,11 @@ public class UserController {
     public ModelAndView home() {
         return new ModelAndView("home", "login", new Login());
     }
+
     @PostMapping("/login")
-    public ModelAndView login(@ModelAttribute("login") Login login){
+    public ModelAndView login(@ModelAttribute("login") Login login) {
         User user = UserDao.checkLogin(login);
-        if(user == null){
+        if (user == null) {
             return new ModelAndView("error");
         } else {
             ModelAndView modelAndView = new ModelAndView("user");
