@@ -1,8 +1,7 @@
 package codegym.csm.service.impl;
 
 import codegym.csm.model.Customer;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
 
 import java.util.List;
 

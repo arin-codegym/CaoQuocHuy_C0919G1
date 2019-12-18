@@ -11,13 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post">
-    <input type="checkbox" path="lettuce" > Lettuce
-    <input type="checkbox" path="tomato" > Tomato
-    <input type="checkbox" path="mustard"  checked> Mustard
-    <input type="checkbox" path="sprouts" > Sprouts
+<form method="post" action="/save">
+    <input type="checkbox" name="condiment" value="lettuce"> Lettuce
+    <input type="checkbox" name="condiment" value="tomato"> Tomato
+    <input type="checkbox" name="condiment" value="mustard" checked> Mustard
+    <input type="checkbox" name="condiment" value="sprouts"> Sprouts
     <br><br>
     <input type="submit" value="Save">
 </form>
+<p>Danh sách đã chọn ${condiment}</p>
 </body>
 </html>
