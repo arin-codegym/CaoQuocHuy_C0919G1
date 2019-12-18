@@ -31,7 +31,7 @@
             </td>
             <td>${customer.getEmail()}</td>
             <td>${customer.getAddress()}</td>
-            <td><a href="${pageContext.request.contextPath}/huy?action=edit&id=${customer.getId()}">edit</a></td>
+            <td><a href="${pageContext.request.contextPath}/huy?id=${customer.getId()}&action=edit">edit</a></td>
             <td><a href="${pageContext.request.contextPath}/huy?action=delete&id=${customer.getId()}">delete</a></td>
         </tr>
     </c:forEach>
