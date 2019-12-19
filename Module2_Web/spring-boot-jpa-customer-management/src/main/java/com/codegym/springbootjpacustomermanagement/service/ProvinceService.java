@@ -9,7 +9,7 @@ public interface ProvinceService {
 
     Iterable<Province> findAll();
 
-    Optional<Province> findById(Long id);
+    Province findById(Long id);
 
     void save(Province province);
 

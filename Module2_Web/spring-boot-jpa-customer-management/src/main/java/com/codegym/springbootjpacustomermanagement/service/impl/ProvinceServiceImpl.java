@@ -20,8 +20,8 @@ public class ProvinceServiceImpl implements ProvinceService {
     }
 
     @Override
-    public Optional<Province> findById(Long id) {
-        return provinceRepository.findById(id);
+    public Province findById(Long id) {
+        return provinceRepository.findById(id).orElse(null);
     }
 
     @Override

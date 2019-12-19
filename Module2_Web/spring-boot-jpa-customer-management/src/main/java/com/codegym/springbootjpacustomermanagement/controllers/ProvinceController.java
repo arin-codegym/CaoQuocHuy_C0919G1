@@ -46,7 +46,7 @@ public class ProvinceController {
 
     @GetMapping("/edit-province/{id}")
     public ModelAndView showEditForm(@PathVariable Long id){
-        Optional<Province> province = provinceService.findById(id);
+        Province province = provinceService.findById(id);
         if(province != null) {
             ModelAndView modelAndView = new ModelAndView("province/edit");
             modelAndView.addObject("province", province);
@@ -69,7 +69,7 @@ public class ProvinceController {
 
     @GetMapping("/delete-province/{id}")
     public ModelAndView showDeleteForm(@PathVariable Long id){
-        Optional<Province> province = provinceService.findById(id);
+        Province province = provinceService.findById(id);
         if(province != null) {
             ModelAndView modelAndView = new ModelAndView("/province/delete");
             modelAndView.addObject("province", province);

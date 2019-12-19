@@ -1,16 +1,13 @@
 package com.codegym.springbootjpacustomermanagement.service.impl;
 
-import codegym.csm.model.Customer;
-import codegym.csm.repository.CustomerRepository;
-import codegym.csm.service.CustomerService;
 import com.codegym.springbootjpacustomermanagement.model.Customer;
 import com.codegym.springbootjpacustomermanagement.repository.CustomerRepository;
 import com.codegym.springbootjpacustomermanagement.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
@@ -22,8 +19,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Optional<Customer> findById(Long id) {
-        return customerRepository.findById(id);
+    public Customer findById(Long id) {
+        return customerRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -33,6 +30,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void remove(Long id) {
-        customerRepository.remove(id);
+        customerRepository.deleteById(id);
     }
 }

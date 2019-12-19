@@ -1,7 +1,7 @@
 package com.codegym.springbootjpacustomermanagement.controllers;
 
-import com.codegym.demo.model.Customer;
-import com.codegym.demo.service.CustomerService;
+import com.codegym.springbootjpacustomermanagement.model.Customer;
+import com.codegym.springbootjpacustomermanagement.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

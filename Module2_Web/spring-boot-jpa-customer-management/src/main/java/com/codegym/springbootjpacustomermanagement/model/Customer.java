@@ -9,9 +9,9 @@ public class Customer {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    @Column(name = "firstname")
+    @Column(name = "firstName")
     private String firstName;
-    @Column(name = "lastname")
+    @Column(name = "lastName")
     private String lastName;
 
     public Customer() {}

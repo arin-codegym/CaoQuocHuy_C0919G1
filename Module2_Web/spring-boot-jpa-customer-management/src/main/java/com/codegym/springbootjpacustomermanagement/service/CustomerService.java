@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface CustomerService {
     List<Customer> findAll();
 
-    Optional<Customer> findById(Long id);
+    Customer findById(Long id);
 
     void save(Customer customer);
 
