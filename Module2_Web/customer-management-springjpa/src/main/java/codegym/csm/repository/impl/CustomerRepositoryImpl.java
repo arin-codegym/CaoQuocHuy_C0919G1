@@ -2,6 +2,7 @@ package codegym.csm.repository.impl;
 
 import codegym.csm.model.Customer;
 import codegym.csm.repository.CustomerRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -9,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+@Transactional
 public class CustomerRepositoryImpl implements CustomerRepository {
     @PersistenceContext
     private EntityManager em;

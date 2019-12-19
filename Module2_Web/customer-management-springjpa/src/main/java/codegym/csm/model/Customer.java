@@ -3,14 +3,15 @@ package codegym.csm.model;
 import javax.persistence.*;
 
 @Entity
-
 @Table(name = "customers")
 public class Customer {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "lastname")
     private String lastName;
 
     public Customer() {}

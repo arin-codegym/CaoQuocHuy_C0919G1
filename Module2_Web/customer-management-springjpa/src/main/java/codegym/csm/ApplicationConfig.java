@@ -2,8 +2,8 @@ package codegym.csm;
 
 import codegym.csm.repository.CustomerRepository;
 import codegym.csm.repository.impl.CustomerRepositoryImpl;
-import codegym.csm.service.impl.CustomerService;
-import codegym.csm.service.impl.CustomerServiecImpl;
+import codegym.csm.service.CustomerService;
+import codegym.csm.service.impl.CustomerServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -51,7 +51,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
 
     @Bean
     public CustomerService customerService(){
-        return new CustomerServiecImpl();
+        return new CustomerServiceImpl();
     }
 
 
@@ -91,7 +91,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[]{"codegym.cms.model"});
+        em.setPackagesToScan(new String[]{"codegym.csm.model"});
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
