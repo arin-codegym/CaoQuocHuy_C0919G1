@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit customer</title>
+    <title>Edit province</title>
 </head>
 <body>
-<h1>Edit customer</h1>
+<h1>Edit province</h1>
 <p>
-    <a href="/customers">Customer list</a>
+    <a href="/provinces">Province list</a>
 </p>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/edit-customer}" th:object="${customer}" method="post">
-    <input th:type="hidden" name="id" th:fields="*{id}">
+<form th:action="@{/edit-province}" th:object="${province}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
     <table>
         <tr>
             <td>First name:</td>
-            <td><input type="text" th:field="*{firstName}"/></td>
-        </tr>
-        <tr>
-            <td>Last name:</td>
-            <td><input type="text" th:field="*{lastName}"/></td>
+            <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="Update customer"></td>
+            <td><input type="submit" value="Update province"></td>
         </tr>
     </table>
 </form>

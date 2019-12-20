@@ -5,6 +5,17 @@ import javax.persistence.*;
 @Entity
 @Table(name = "customers")
 public class Customer {
+    @ManyToOne
+    @JoinColumn(name = "province_id")
+    private Province province;
+
+    public Province getProvince() {
+        return province;
+    }
+
+    public void setProvince(Province province) {
+        this.province = province;
+    }
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

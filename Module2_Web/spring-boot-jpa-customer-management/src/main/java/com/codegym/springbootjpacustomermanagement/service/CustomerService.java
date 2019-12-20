@@ -1,6 +1,7 @@
 package com.codegym.springbootjpacustomermanagement.service;
 
 import com.codegym.springbootjpacustomermanagement.model.Customer;
+import com.codegym.springbootjpacustomermanagement.model.Province;
 import org.springframework.stereotype.Service;
 
 
@@ -15,4 +16,5 @@ public interface CustomerService {
     void save(Customer customer);
 
     void remove(Long id);
+    Iterable<Customer> findAllByProvince(Province province);
 }
